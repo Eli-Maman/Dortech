@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products & Solutions | Dortech Information Technology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #0b0f1a;
+            --header-bg: #121929;
+            --footer-bg: #070a12;
+            --neon-blue: #00d2ff;
+            --dortech-orange: #ff9d00;
+            --text-light: #f1f5f9;
+            --text-dim: #94a3b8;
+        }
+
+        body { 
+            font-family: 'Assistant', sans-serif; 
+            margin: 0; 
+            background-color: var(--bg-deep); 
+            color: var(--text-light); 
+            line-height: 1.5; 
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; box-sizing: border-box; }
+
+        /* HEADER */
+        header { padding: 0.8rem 0; background: linear-gradient(to bottom, var(--header-bg) 0%, var(--bg-deep) 100%); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(0, 210, 255, 0.15); }
+        .header-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo-img { height: 65px; width: auto; }
+        nav { display: flex; align-items: center; }
+        nav a { text-decoration: none; color: var(--text-light); margin-left: 2rem; font-weight: 600; transition: 0.3s; font-size: 1rem; }
+        nav a:hover, nav a.active { color: var(--neon-blue); }
+        .lang-switch { color: var(--dortech-orange) !important; font-weight: 800; border: 1px solid var(--dortech-orange); padding: 2px 8px; border-radius: 4px; }
+
+        /* HERO */
+        .hero-section { padding: 4rem 0 1.5rem; text-align: left; }
+        .hero-section h1 { font-size: 3.2rem; color: #fff; margin: 0; }
+        .hero-section h1 b { color: var(--neon-blue); font-weight: 800; }
+
+        /* SERVICE BLOCKS */
+        .service-block { padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); scroll-margin-top: 100px; text-align: left; }
+        .service-block:last-child { border-bottom: none; }
+        
+        .service-block h2 { color: var(--neon-blue); font-size: 1.8rem; margin: 0 0 0.6rem 0; position: relative; display: inline-block; padding-bottom: 5px; }
+        .service-block h2::after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: var(--dortech-orange); }
+        
+        .service-block p { font-size: 1.15rem; color: var(--text-dim); margin: 0; text-align: justify; }
+
+        /* FOOTER */
+        .site-footer { background-color: var(--footer-bg); padding: 3.5rem 0 1.5rem; border-top: 1px solid rgba(0, 210, 255, 0.1); margin-top: 3rem; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1.5fr; gap: 3rem; }
+        .footer-col h4 { color: #fff; margin: 0 0 1.2rem 0; position: relative; padding-bottom: 0.4rem; }
+        .footer-col h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 35px; height: 2px; background: var(--dortech-orange); }
+        .footer-col p { color: var(--text-dim); font-size: 0.95rem; margin: 0 0 0.8rem 0; }
+        .footer-links a { color: var(--text-dim); text-decoration: none; display: block; margin-bottom: 0.6rem; font-size: 0.95rem; }
+        .footer-links a:hover { color: var(--neon-blue); }
+
+        @media (max-width: 768px) {
+            .hero-section h1 { font-size: 2.5rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-flex">
+        <a href="index-en.html"><img src="Dortech logo.png" alt="Dortech" class="logo-img"></a>
+        <nav>
+            <a href="index-en.html">Home</a>
+            <a href="about-en.html">About</a>
+            <a href="services-en.html" class="active">Solutions</a>
+            <a href="customers-en.html">Customers</a>
+            <a href="careers-en.html">Careers</a>
+            <a href="contact-en.html">Contact</a>
+            <a href="services-he.html" class="lang-switch">HE</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <section class="hero-section">
+        <h1>Products & <b>Solutions</b></h1>
+    </section>
+
+    <div class="service-block" id="consulting">
+        <h2>Strategic Consulting & Planning</h2>
+        <p>Comprehensive site survey, consulting on choosing the most suitable infrastructure and connectivity for the organization's needs, project planning including detailed specifications for communication, hardware, and software systems.</p>
+    </div>
+
+    <div class="service-block" id="infrastructure">
+        <h2>Communication Infrastructure & Low Voltage</h2>
+        <p>Planning and deployment of communication networks, endpoints, and server room establishment. Our expertise includes the installation of smart PBX (telephony) and low-voltage systems, including access control infrastructure and CCTV.</p>
+    </div>
+
+    <div class="service-block" id="virtualization">
+        <h2>Virtualization & Servers</h2>
+        <p>Setup and configuration of application and mail servers using VMware, Hyper-V, or Open Source technologies. These solutions enable optimal hardware resource utilization, maintenance cost savings, and maximum operational flexibility. Server configurations are tailored for organizations ranging from a few users to networks supporting hundreds of workstations.</p>
+    </div>
+
+    <div class="service-block" id="security">
+        <h2>Information Security</h2>
+        <p>The majority of organizational data breaches are caused by users (usually in good faith). Proper training, establishing work procedures, and using the right technological tools reduce and even prevent damage from users. These are, of course, in addition to the correct definition and management of Firewall, EDR, and protection tools to prevent malicious network intrusion.</p>
+    </div>
+
+    <div class="service-block" id="cloud">
+        <h2>Cloud Computing</h2>
+        <p>Provision of cloud-based mail services (Hosted Exchange), file servers, application servers, and terminal servers in physical or virtual cloud configurations. We offer Office 365 and Google Apps based solutions, customized to the organization's specific requirements.</p>
+    </div>
+
+    <div class="service-block" id="hardware">
+        <h2>Hardware & Software Supply</h2>
+        <p>As authorized resellers of leading brands (Dell, Lenovo, Fortinet, Check Point, etc.), we provide servers, workstations, peripheral equipment, and software tailored precisely to your requirements.</p>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="Dortech logo.png" alt="Dortech" style="height: 48px; margin-bottom: 15px;">
+                <p>Dortech provides comprehensive technological solutions since 2001, focusing on human service and customized solutions.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Navigation</h4>
+                <div class="footer-links">
+                    <a href="index-en.html">Home</a>
+                    <a href="about-en.html">About Us</a>
+                    <a href="services-en.html">Solutions</a>
+                    <a href="customers-en.html">Customers</a>
+                    <a href="careers-en.html">Careers</a>
+                    <a href="contact-en.html">Contact Us</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Details</h4>
+                <p><b>📞 Phone:</b> 03-5751070</p>
+                <p><b>📧 Email:</b> info@dortech.co.il</p>
+                <p><b>📍 Address:</b> 7 Jabotinsky St., Moshe Aviv Tower, Ramat Gan</p>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:2.5rem; color:var(--text-dim); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem; font-size:0.85rem;">
+            &copy; 2026 Dortech Information Technology Ltd. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

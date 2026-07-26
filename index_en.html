@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DORTECH | IT Solutions, Cybersecurity & Communication</title>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #0b0f1a;
+            --neon-blue: #00d2ff;
+            --dortech-orange: #ff9d00;
+            --text-light: #f1f5f9;
+            --text-dim: #94a3b8;
+            --footer-bg: #070a12;
+            --header-bg: #121929;
+        }
+
+        /* --- Accessibility --- */
+        html { font-size: 16px; transition: font-size 0.2s; }
+        html.acc-large-text { font-size: 22px; }
+        body.acc-high-contrast { background: #000 !important; color: #fff !important; }
+        body.acc-high-contrast * { color: #fff !important; border-color: #fff !important; }
+
+        body { 
+            font-family: 'Assistant', sans-serif; 
+            margin: 0; 
+            background-color: var(--bg-deep); 
+            color: var(--text-light); 
+            line-height: 1.8; 
+            overflow-x: hidden;
+        }
+        
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
+
+        /* --- Header --- */
+        header { padding: 0.8rem 0; background: linear-gradient(to bottom, var(--header-bg) 0%, var(--bg-deep) 100%); backdrop-filter: blur(15px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(0, 210, 255, 0.15); }
+        .header-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo-img { height: 65px; width: auto; display: block; filter: drop-shadow(0 0 10px rgba(0, 210, 255, 0.1)); }
+        
+        nav { display: flex; align-items: center; }
+        nav a { text-decoration: none; color: var(--text-light); margin-right: 2.1rem; font-weight: 600; font-size: 1.1rem; transition: 0.3s; }
+        nav a:hover { color: var(--neon-blue); }
+
+        .lang-switch { margin-left: 2rem; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 1.5rem; }
+        .lang-link { color: var(--neon-blue); text-decoration: none; font-weight: 800; font-size: 0.9rem; border: 1px solid var(--neon-blue); padding: 4px 10px; border-radius: 4px; }
+
+        /* --- Hero Section --- */
+        .hero { 
+            min-height: 80vh; 
+            display: flex; 
+            align-items: center; 
+            background: linear-gradient(to right, rgba(11, 15, 26, 1) 35%, rgba(11, 15, 26, 0.2) 100%), 
+                        url('Photo1.jpg') no-repeat right center / contain; 
+            padding: 2.5rem 0; 
+        }
+        
+        .hero-left-side { 
+            width: 50%; 
+            margin-left: 1.5rem; 
+            padding-left: 1rem;
+        } 
+        
+        .hero h1 { font-size: 4rem; font-weight: 200; margin-bottom: 1.5rem; color: #fff; line-height: 1.1; }
+        .hero h1 b { color: var(--neon-blue); font-weight: 700; text-shadow: 0 0 25px rgba(0, 210, 255, 0.5); }
+        .hero .description { font-size: 1.3rem; max-width: 550px; color: var(--text-dim); margin-bottom: 3rem; }
+        .btn-orange { background: var(--dortech-orange); color: #000; padding: 1.1rem 3.5rem; border-radius: 4px; text-decoration: none; font-weight: 800; font-size: 1.25rem; display: inline-block; box-shadow: 0 0 15px rgba(255, 157, 0, 0.4); }
+
+        /* --- Grid --- */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+        .card { background: rgba(18, 25, 41, 0.95); padding: 2.5rem 2rem; border-radius: 12px; border: 1px solid rgba(0, 210, 255, 0.1); transition: 0.4s; }
+        .card:hover { border-color: var(--neon-blue); transform: translateY(-5px); }
+        .card h3 { color: var(--neon-blue); font-size: 1.5rem; margin-bottom: 1rem; }
+
+        /* --- Philosophy --- */
+        .philosophy-section { padding: 5rem 0; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 5rem; }
+        .philosophy-card { background: rgba(22, 30, 45, 0.5); padding: 3rem; border-left: 4px solid var(--dortech-orange); border-radius: 8px 0 0 8px; }
+        .philosophy-card h2 { font-size: 2.2rem; margin-bottom: 1.5rem; color: #fff; }
+        .philosophy-card h2 span { color: var(--dortech-orange); font-weight: 400; }
+        .philosophy-content { font-size: 1.25rem; color: var(--text-dim); max-width: 900px; }
+
+        /* --- Footer --- */
+        footer { background-color: var(--footer-bg); padding: 5rem 0 2rem; margin-top: 6rem; border-top: 1px solid rgba(0, 210, 255, 0.1); }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1.5fr; gap: 4rem; margin-bottom: 3rem; }
+        .footer-col h4 { color: #fff; font-size: 1.3rem; margin-bottom: 1.5rem; position: relative; padding-bottom: 0.6rem; }
+        .footer-col h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 2px; background: var(--dortech-orange); }
+        .footer-links { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 0.8rem; }
+        .footer-links a { color: var(--text-dim); text-decoration: none; font-size: 1rem; }
+
+        /* --- Accessibility Menu --- */
+        #accessibility-nav { position: fixed; right: 20px; bottom: 20px; z-index: 2001; }
+        .acc-btn { background: #fff; border: 2px solid var(--neon-blue); border-radius: 50%; width: 55px; height: 55px; cursor: pointer; font-size: 26px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; }
+        .acc-menu { display: none; position: absolute; bottom: 65px; right: 0; background: #fff; border-radius: 12px; width: 240px; padding: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.6); border: 1px solid #ddd; }
+        .acc-menu.active { display: block; }
+        .acc-option { display: block; width: 100%; text-align: left; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 12px; margin-bottom: 10px; border-radius: 6px; cursor: pointer; font-weight: 700; color: #334155; }
+
+        @media (max-width: 992px) { .hero h1 { font-size: 2.8rem; } .hero-left-side { width: 100%; text-align: center; margin-left: 0; padding-left: 0; } .footer-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<div id="accessibility-nav">
+    <button class="acc-btn" onclick="toggleAccMenu()">♿</button>
+    <div class="acc-menu" id="accMenu">
+        <h4 style="color:#000; margin-top:0; text-align:center;">Accessibility</h4>
+        <button class="acc-option" onclick="accAction('large-text', this)">Large Text</button>
+        <button class="acc-option" onclick="accAction('high-contrast', this)">High Contrast</button>
+        <button class="acc-option" onclick="accAction('highlight-links', this)">Highlight Links</button>
+        <button class="acc-option" style="background:#ef4444; color:#fff;" onclick="accAction('reset')">Reset Settings</button>
+    </div>
+</div>
+
+<header>
+    <div class="container header-flex">
+        <a href="index-en.html"><img src="Dortech logo.png" alt="DORTECH" class="logo-img"></a>
+        <nav>
+            <a href="about-en.html">About</a>
+            <a href="services-en.html">Solutions</a>
+            <a href="contact-en.html">Contact Us</a>
+            <div class="lang-switch">
+                <a href="index.html" class="lang-link">Hebrew</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="hero-left-side">
+            <h1>We handle the tech. <b>Enjoy the peace of mind.</b></h1>
+            <p class="description">Dortech provides end-to-end IT solutions, cybersecurity, and communication infrastructure. We deliver professional IT management with a human-to-human approach above all. We implement advanced digital tools tailored to each client's specific needs and budget, aimed at streamlining processes, minimizing faults, and technological confidence.</p>
+            <a href="contact-en.html" class="btn-orange">Let's Get Started</a>
+        </div>
+    </section>
+
+    <section id="services" class="container">
+        <div class="grid">
+            <div class="card">
+                <h3>Reliability & Professionalism</h3>
+                <p>Years of experience in managing complex systems with full transparency throughout the entire process.</p>
+            </div>
+            <div class="card">
+                <h3>Personable & Friendly Service</h3>
+                <p>Behind every server and computer, there are people. We are here for you with patience and a smile.</p>
+            </div>
+            <div class="card">
+                <h3>Tailored Solutions</h3>
+                <p>Partnership and trust. We don't sell technology for technology's sake. We implement solutions specifically adapted to your needs and budget.</p>
+            </div>
+            <div class="card">
+                <h3>Comprehensive Management</h3>
+                <p>We take full responsibility for all systems and vendor interfaces. The users have only one point of contact.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="container philosophy-section">
+        <div class="philosophy-card">
+            <h2>Our Philosophy: <span>Translating "Tech-Speak" into Plain Language</span></h2>
+            <div class="philosophy-content">
+                In a world where technology evolves by the minute, our mission is to take that weight off your shoulders. We become your dedicated IT team, the users turn to us for anything they need. We handle every interaction with telecom providers, software vendors, and any other tech supplier, ensuring seamless communication and serving as the reliable bridge that keeps everything connected.
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="Dortech logo.png" alt="DORTECH" style="height: 48px; margin-bottom: 20px;">
+                <p>Dortech has been providing comprehensive technological solutions since 2001, focusing on human service and personalized solutions.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index-en.html">Home</a></li>
+                    <li><a href="about-en.html">About Us</a></li>
+                    <li><a href="services-en.html">Solutions</a></li>
+                    <li><a href="customers-en.html">Customers</a></li>
+                    <li><a href="careers-en.html">Careers</a></li>
+                    <li><a href="contact-en.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <div class="contact-info-footer">
+                    <p><b>📞 Phone:</b> 03-5751070</p>
+                    <p><b>📧 Email:</b> info@dortech.co.il</p>
+                    <p><b>📍 Address:</b> 7 Jabotinsky St., Moshe Aviv Tower, Ramat Gan</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Dortech IT Management Ltd. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+<script>
+    function toggleAccMenu() { document.getElementById('accMenu').classList.toggle('active'); }
+    function accAction(action, btn) {
+        const html = document.documentElement;
+        const body = document.body;
+        if (action === 'reset') {
+            html.classList.remove('acc-large-text');
+            body.classList.remove('acc-high-contrast', 'acc-highlight-links');
+            return;
+        }
+        if (action === 'large-text') html.classList.toggle('acc-large-text');
+        else body.classList.toggle('acc-' + action);
+    }
+</script>
+
+</body>
+</html>

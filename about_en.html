@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Dortech Information Technology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #0b0f1a;
+            --header-bg: #121929;
+            --footer-bg: #070a12;
+            --neon-blue: #00d2ff;
+            --dortech-orange: #ff9d00;
+            --text-light: #f1f5f9;
+            --text-dim: #94a3b8;
+        }
+
+        body { 
+            font-family: 'Assistant', sans-serif; 
+            margin: 0; 
+            background-color: var(--bg-deep); 
+            color: var(--text-light); 
+            line-height: 1.5; 
+            overflow-x: hidden;
+        }
+        
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; box-sizing: border-box; }
+
+        /* HEADER */
+        header { padding: 0.8rem 0; background: linear-gradient(to bottom, var(--header-bg) 0%, var(--bg-deep) 100%); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(0, 210, 255, 0.15); }
+        .header-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo-img { height: 65px; width: auto; }
+        nav { display: flex; align-items: center; }
+        nav a { text-decoration: none; color: var(--text-light); margin-left: 2rem; font-weight: 600; transition: 0.3s; font-size: 1rem; }
+        nav a:hover, nav a.active { color: var(--neon-blue); }
+        .lang-switch { color: var(--dortech-orange) !important; font-weight: 800; border: 1px solid var(--dortech-orange); padding: 2px 8px; border-radius: 4px; }
+
+        /* HERO */
+        .about-hero { padding: 4rem 0 1.5rem; text-align: left; }
+        .about-hero h1 { font-size: 3.2rem; color: #fff; margin: 0; }
+        .about-hero h1 b { color: var(--neon-blue); font-weight: 800; }
+        .tagline { color: var(--dortech-orange); font-size: 1.4rem; font-weight: 600; margin: 0.2rem 0 0; }
+
+        /* CONTENT & SPACING */
+        .content-section { padding: 1.2rem 0; text-align: left; }
+        .content-section h2 { color: var(--neon-blue); font-size: 2rem; margin: 0 0 0.8rem 0; position: relative; display: inline-block; padding-bottom: 5px; }
+        .content-section h2::after { content: ''; position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: var(--dortech-orange); }
+        
+        .content-section p { font-size: 1.15rem; color: var(--text-dim); margin: 0 0 0.8rem 0; text-align: justify; }
+
+        /* RESPONSIBILITY BOX */
+        .responsibility-box { 
+            background: rgba(0, 210, 255, 0.04); 
+            border: 1px solid rgba(0, 210, 255, 0.15); 
+            padding: 1.8rem; 
+            border-radius: 10px; 
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+        .highlight-main { color: var(--text-light); font-weight: 700; background: rgba(0, 210, 255, 0.1); padding: 1px 4px; border-radius: 3px; }
+
+        /* EXPERTISE GRID */
+        .expertise-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+            gap: 1rem; 
+            margin-top: 1rem; 
+        }
+        .expertise-link { 
+            background: rgba(255, 255, 255, 0.02); 
+            padding: 1rem; 
+            border-radius: 6px; 
+            border: 1px solid rgba(255,255,255,0.05);
+            text-decoration: none;
+            color: var(--text-light);
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 600;
+        }
+        .expertise-link:hover { border-color: var(--neon-blue); background: rgba(0, 210, 255, 0.05); transform: translateY(-2px); }
+
+        /* FOOTER */
+        .site-footer { background-color: var(--footer-bg); padding: 3.5rem 0 1.5rem; border-top: 1px solid rgba(0, 210, 255, 0.1); margin-top: 3rem; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1.5fr; gap: 3rem; }
+        .footer-col h4 { color: #fff; margin: 0 0 1.2rem 0; position: relative; padding-bottom: 0.4rem; }
+        .footer-col h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 35px; height: 2px; background: var(--dortech-orange); }
+        .footer-col p { color: var(--text-dim); font-size: 0.95rem; margin: 0 0 0.8rem 0; }
+        .footer-links a { color: var(--text-dim); text-decoration: none; display: block; margin-bottom: 0.6rem; font-size: 0.95rem; }
+        .footer-links a:hover { color: var(--neon-blue); }
+
+        @media (max-width: 768px) {
+            .about-hero h1 { font-size: 2.5rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-flex">
+        <a href="index-en.html"><img src="Dortech logo.png" alt="Dortech" class="logo-img"></a>
+        <nav>
+            <a href="index-en.html">Home</a>
+            <a href="about-en.html" class="active">About</a>
+            <a href="services-en.html">Solutions</a>
+            <a href="customers-en.html">Customers</a>
+            <a href="careers-en.html">Careers</a>
+            <a href="contact-en.html">Contact</a>
+            <a href="about-he.html" class="lang-switch">HE</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <section class="about-hero">
+        <h1>Dortech Information Technology – <b>Your Technology Partner</b></h1>
+        <p class="tagline">Professionalism, Reliability & Personal Service Since 2001</p>
+    </section>
+
+    <div class="content-section">
+        <h2>Who We Are</h2>
+        <p>Dortech Information Technology Ltd. has been operating since 2001 with the goal of providing comprehensive computing solutions for businesses under the "One Stop Shop" concept. We provide a wide envelope of services including consulting, deployment, management, and maintenance of IT infrastructure, communication networks, hardware supply, and peripheral equipment.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Feel the Difference</h2>
+        <p>When we take responsibility for a client's information systems, the difference is felt immediately. We are not just another external IT company providing technical services, from the very first moment, you will feel that Dortech is your in-house computer department.</p>
+        <p>Following a comprehensive site survey and a technological "alignment," we become your single point of contact (SPOC) for all third-party vendors: ISP, software providers, or any other technological supplier. This begins with securing the best deals and prices for you and continues with ongoing management and full resolution of technical issues. With us, you will no longer hear from the software provider that "the problem is with the hardware," or from the hardware provider that "the problem is with the software."</p>
+        <p>Every inquiry is made directly to Dortech, and we manage the event until a full solution is reached. We take the responsibility so you can focus on running your business with peace of mind.</p>
+    </div>
+
+    <div class="responsibility-box">
+        <div class="content-section" style="padding:0;">
+            <h2>Total Responsibility & Technological Security</h2>
+            <p>We offer a retainer-based support program founded on taking total responsibility for the organization's computing layout. <span class="highlight-main">This model allows you to receive support and maintenance for a fixed monthly fee, with no limit on hours. This is the core of our reliability: we are committed to results, not to hours worked.</span></p>
+            <p>In addition to our retainer model, Dortech provides customized Outsourcing solutions for larger organizations. This includes placing professional IT experts, CIOs, or system administrators on a full-time or part-time basis within your organization. Every employee working at your site benefits from the guidance, professional backup, and extensive knowledge base of Dortech.</p>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Products & Solutions</h2>
+        <div class="expertise-grid">
+            <a href="services-en.html#consulting" class="expertise-link"><span>Strategic Consulting & Planning</span> <i>→</i></a>
+            <a href="services-en.html#infrastructure" class="expertise-link"><span>Infrastructure & Low Voltage</span> <i>→</i></a>
+            <a href="services-en.html#virtualization" class="expertise-link"><span>Virtualization & Servers</span> <i>→</i></a>
+            <a href="services-en.html#security" class="expertise-link"><span>Information Security</span> <i>→</i></a>
+            <a href="services-en.html#cloud" class="expertise-link"><span>Cloud Computing</span> <i>→</i></a>
+            <a href="services-en.html#hardware" class="expertise-link"><span>Hardware & Software Supply</span> <i>→</i></a>
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="Dortech logo.png" alt="Dortech" style="height: 48px; margin-bottom: 15px;">
+                <p>Dortech provides comprehensive technological solutions since 2001, focusing on human service and customized solutions.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Navigation</h4>
+                <div class="footer-links">
+                    <a href="index-en.html">Home</a>
+                    <a href="about-en.html">About Us</a>
+                    <a href="services-en.html">Solutions</a>
+                    <a href="customers-en.html">Customers</a>
+                    <a href="careers-en.html">Careers</a>
+                    <a href="contact-en.html">Contact Us</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Details</h4>
+                <p><b>📞 Phone:</b> 03-5751070</p>
+                <p><b>📧 Email:</b> info@dortech.co.il</p>
+                <p><b>📍 Address:</b> 7 Jabotinsky St., Moshe Aviv Tower, Ramat Gan</p>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:2.5rem; color:var(--text-dim); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem; font-size:0.85rem;">
+            &copy; 2026 Dortech Information Technology Ltd. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

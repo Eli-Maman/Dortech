@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>צור קשר | דורטק פתרונות מחשוב</title>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #0b0f1a;
+            --neon-blue: #00d2ff;
+            --dortech-orange: #ff9d00;
+            --text-light: #f1f5f9;
+            --text-dim: #94a3b8;
+            --footer-bg: #070a12;
+            --header-bg: #121929;
+            --bg-form-light: #f1f5f9;
+            --text-form-dark: #1e293b;
+        }
+
+        body { 
+            font-family: 'Assistant', sans-serif; 
+            margin: 0; 
+            background-color: var(--bg-deep); 
+            color: var(--text-light); 
+            line-height: 1.8; 
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; width: 100%; box-sizing: border-box; }
+
+        header { padding: 0.8rem 0; background: linear-gradient(to bottom, var(--header-bg) 0%, var(--bg-deep) 100%); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(0, 210, 255, 0.15); }
+        .header-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo-img { height: 65px; width: auto; }
+        
+        nav a { text-decoration: none; color: var(--text-light); margin-right: 2rem; font-weight: 600; transition: 0.3s; }
+        nav a:hover { color: var(--neon-blue); }
+
+        .contact-hero { padding: 6rem 0 3rem; text-align: right; }
+        .contact-hero h1 { font-size: 3.5rem; color: #fff; margin-bottom: 1rem; }
+        .contact-hero h1 b { color: var(--neon-blue); }
+
+        /* --- התיקון הקריטי: FLEX במקום GRID --- */
+        .contact-wrapper { 
+            display: flex; 
+            gap: 4rem; 
+            margin-top: 2rem; 
+            margin-bottom: 6rem;
+            align-items: flex-start;
+        }
+
+        .contact-form { 
+            flex: 1; /* לוקח בדיוק חצי */
+            background: var(--bg-form-light); 
+            padding: 3rem; 
+            border-radius: 12px; 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            color: var(--text-form-dark);
+        }
+
+        .contact-info { 
+            flex: 1; /* לוקח בדיוק חצי */
+            text-align: right;
+        }
+
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 700; }
+        .form-group input, .form-group textarea { width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; font-family: inherit; }
+        
+        .btn-submit { background: var(--dortech-orange); color: #000; border: none; padding: 1rem; font-size: 1.1rem; font-weight: 800; border-radius: 4px; cursor: pointer; width: 100%; }
+
+        .info-item { margin-bottom: 2.5rem; }
+        .info-item h3 { color: var(--neon-blue); font-size: 1.4rem; margin-bottom: 0.5rem; }
+
+        /* Footer */
+        .site-footer { background-color: var(--footer-bg); padding: 5rem 0 2rem; border-top: 1px solid rgba(0, 210, 255, 0.1); margin-top: auto; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1.5fr; gap: 4rem; }
+        .footer-col h4 { color: #fff; margin-bottom: 1.5rem; position: relative; padding-bottom: 0.5rem; }
+        .footer-col h4::after { content: ''; position: absolute; bottom: 0; right: 0; width: 40px; height: 2px; background: var(--dortech-orange); }
+        .footer-links a { color: var(--text-dim); text-decoration: none; display: block; margin-bottom: 0.8rem; }
+
+        /* Accessibility */
+        #accessibility-nav { position: fixed; right: 20px; bottom: 20px; z-index: 9999; }
+        .acc-btn { background: #fff; border: 2px solid var(--neon-blue); border-radius: 50%; width: 50px; height: 50px; cursor: pointer; font-size: 24px; }
+        .acc-menu { display: none; position: absolute; bottom: 60px; right: 0; background: #fff; border-radius: 8px; width: 220px; padding: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); border: 1px solid #ccc; color: #000; }
+        .acc-menu.active { display: block; }
+        .acc-option { display: block; width: 100%; background: #f0f0f0; border: 1px solid #ccc; padding: 10px; margin-bottom: 8px; cursor: pointer; font-weight: bold; }
+
+        @media (max-width: 992px) {
+            .contact-wrapper { flex-direction: column; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="accessibility-nav">
+    <button class="acc-btn" onclick="this.nextElementSibling.classList.toggle('active')">♿</button>
+    <div class="acc-menu">
+        <h5 style="margin:0 0 10px 0; text-align:center;">הגדרות נגישות</h5>
+        <button class="acc-option" onclick="document.documentElement.classList.toggle('acc-large-text')">טקסט גדול</button>
+        <button class="acc-option" onclick="document.body.classList.toggle('acc-high-contrast')">ניגודיות גבוהה</button>
+        <button class="acc-option" style="background:#ff4444; color:#fff;" onclick="location.reload()">איפוס</button>
+    </div>
+</div>
+
+<header>
+    <div class="container header-flex">
+        <a href="index.html"><img src="Dortech%20logo.png" alt="דורטק" class="logo-img"></a>
+        <nav>
+            <a href="index.html#about">אודות</a>
+            <a href="index.html#services">פתרונות</a>
+            <a href="../contact-he.html" style="color: var(--neon-blue);">צור קשר</a>
+            <a href="../contact.html" style="margin-right:2rem; border:1px solid var(--neon-blue); padding:4px 10px; border-radius:4px; text-decoration:none; color:var(--neon-blue); font-weight:800; font-size:0.9rem;">English</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <section class="contact-hero">
+        <h1>דברו <b>איתנו</b></h1>
+        <p>אנחנו כאן לכל שאלה. השאירו פרטים ונחזור אליכם בהקדם האפשרי.</p>
+    </section>
+
+    <div class="contact-wrapper">
+        <div class="contact-form">
+            <form>
+                <div class="form-group"><label>שם מלא</label><input type="text" placeholder="השם שלך" required></div>
+                <div class="form-group"><label>כתובת אימייל</label><input type="email" placeholder="email@company.com" required></div>
+                <div class="form-group"><label>מספר טלפון</label><input type="tel" placeholder="050-0000000"></div>
+                <div class="form-group"><label>הודעה</label><textarea rows="5" placeholder="איך נוכל לעזור?"></textarea></div>
+                <button type="submit" class="btn-submit">שליחת הודעה</button>
+            </form>
+        </div>
+
+        <div class="contact-info">
+            <div class="info-item"><h3>המשרדים שלנו</h3><p>מגדל משה אביב, ז'בוטינסקי 7, רמת גן</p></div>
+            <div class="info-item"><h3>קשר ישיר</h3><p><b>טלפון:</b> 03-5751070</p><p><b>דוא"ל:</b> info@dortech.co.il</p></div>
+            <div class="info-item"><h3>שעות פעילות</h3><p>ראשון - חמישי: 09:00 - 18:00</p></div>
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="Dortech%20logo.png" alt="דורטק" style="height: 48px; margin-bottom: 20px;">
+                <p>דורטק מספקת פתרונות טכנולוגיים מקיפים משנת 2001, תוך דגש על שירות אנושי ופתרונות המותאמים אישית.</p>
+            </div>
+            <div class="footer-col">
+                <h4>ניווט מהיר</h4>
+                <div class="footer-links">
+                    <a href="index.html#about">אודותינו</a>
+                    <a href="index.html#services">פתרונות</a>
+                    <a href="#">לקוחות</a>
+                    <a href="#">קריירה</a>
+                    <a href="../contact-he.html">צור קשר</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>פרטי התקשרות</h4>
+                <p><b>📞 טלפון:</b> 03-5751070</p>
+                <p><b>📧 דוא"ל:</b> info@dortech.co.il</p>
+                <p><b>📍 כתובת:</b> ז'בוטינסקי 7, מגדל משה אביב, רמת גן</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

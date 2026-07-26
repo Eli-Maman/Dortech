@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אודות | דורטק פתרונות מחשוב</title>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #0b0f1a;
+            --header-bg: #121929;
+            --footer-bg: #070a12;
+            --neon-blue: #00d2ff;
+            --dortech-orange: #ff9d00;
+            --text-light: #f1f5f9;
+            --text-dim: #94a3b8;
+        }
+
+        body { 
+            font-family: 'Assistant', sans-serif; 
+            margin: 0; 
+            background-color: var(--bg-deep); 
+            color: var(--text-light); 
+            line-height: 1.5; 
+            overflow-x: hidden;
+        }
+        
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; box-sizing: border-box; }
+
+        /* HEADER */
+        header { padding: 0.8rem 0; background: linear-gradient(to bottom, var(--header-bg) 0%, var(--bg-deep) 100%); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(0, 210, 255, 0.15); }
+        .header-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo-img { height: 65px; width: auto; }
+        nav a { text-decoration: none; color: var(--text-light); margin-right: 2rem; font-weight: 600; transition: 0.3s; }
+        nav a:hover, nav a.active { color: var(--neon-blue); }
+
+        /* HERO */
+        .about-hero { padding: 4rem 0 1.5rem; text-align: right; }
+        .about-hero h1 { font-size: 3.2rem; color: #fff; margin: 0; }
+        .about-hero h1 b { color: var(--neon-blue); font-weight: 800; }
+        .tagline { color: var(--dortech-orange); font-size: 1.4rem; font-weight: 600; margin: 0.2rem 0 0; }
+
+        /* CONTENT & SPACING (Reduced Margins) */
+        .content-section { padding: 1.2rem 0; text-align: right; }
+        .content-section h2 { color: var(--neon-blue); font-size: 2rem; margin: 0 0 0.8rem 0; position: relative; display: inline-block; padding-bottom: 5px; }
+        .content-section h2::after { content: ''; position: absolute; bottom: 0; right: 0; width: 50px; height: 3px; background: var(--dortech-orange); }
+        
+        .content-section p { font-size: 1.15rem; color: var(--text-dim); margin: 0 0 0.8rem 0; text-align: justify; }
+        .content-section p:last-child { margin-bottom: 0; }
+
+        /* RESPONSIBILITY BOX */
+        .responsibility-box { 
+            background: rgba(0, 210, 255, 0.04); 
+            border: 1px solid rgba(0, 210, 255, 0.15); 
+            padding: 1.8rem; 
+            border-radius: 10px; 
+            margin: 1.5rem 0;
+        }
+        .highlight-main { color: var(--text-light); font-weight: 700; background: rgba(0, 210, 255, 0.1); padding: 1px 4px; border-radius: 3px; }
+
+        /* EXPERTISE GRID */
+        .expertise-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+            gap: 1rem; 
+            margin-top: 1rem; 
+        }
+        .expertise-link { 
+            background: rgba(255, 255, 255, 0.02); 
+            padding: 1rem; 
+            border-radius: 6px; 
+            border: 1px solid rgba(255,255,255,0.05);
+            text-decoration: none;
+            color: var(--text-light);
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 600;
+        }
+        .expertise-link:hover { border-color: var(--neon-blue); background: rgba(0, 210, 255, 0.05); transform: translateY(-2px); }
+
+        /* FOOTER */
+        .site-footer { background-color: var(--footer-bg); padding: 3.5rem 0 1.5rem; border-top: 1px solid rgba(0, 210, 255, 0.1); margin-top: 3rem; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1.5fr; gap: 3rem; }
+        .footer-col h4 { color: #fff; margin: 0 0 1.2rem 0; position: relative; padding-bottom: 0.4rem; }
+        .footer-col h4::after { content: ''; position: absolute; bottom: 0; right: 0; width: 35px; height: 2px; background: var(--dortech-orange); }
+        .footer-col p { color: var(--text-dim); font-size: 0.95rem; margin: 0 0 0.8rem 0; }
+        .footer-links a { color: var(--text-dim); text-decoration: none; display: block; margin-bottom: 0.6rem; font-size: 0.95rem; transition: 0.2s; }
+        .footer-links a:hover { color: var(--neon-blue); }
+
+        @media (max-width: 768px) {
+            .about-hero h1 { font-size: 2.5rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-flex">
+        <a href="index.html"><img src="Dortech logo.png" alt="דורטק" class="logo-img"></a>
+        <nav>
+            <a href="index.html">בית</a>
+            <a href="about-he.html" class="active">אודות</a>
+            <a href="services-he.html">פתרונות</a>
+            <a href="contact-he.html">צור קשר</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <section class="about-hero">
+        <h1>דורטק ניהול מערכות מידע – <b>השותף הטכנולוגי שלך</b></h1>
+        <p class="tagline">מקצועיות, אמינות ושירות אישי מאז 2001</p>
+    </section>
+
+    <div class="content-section">
+        <h2>מי אנחנו?</h2>
+        <p>דורטק ניהול מערכות מידע בע"מ פועלת משנת 2001 במטרה לספק פתרונות מחשוב כוללים לעסקים בתפיסת "One Stop Shop". אנו מעמידים לרשותכם מעטפת שירותים רחבה של ייעוץ, הקמה, ניהול ותחזוקה של מערך ה-IT, רשתות תקשורת, אספקת חומרה וציוד היקפי.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>מרגישים את ההבדל</h2>
+        <p>כאשר אנו לוקחים אחריות על מערכות המידע של הלקוח, מיד רואים את ההבדל. אנחנו לא עוד חברת IT חיצונית שמספקת שירותים טכניים – מהרגע הראשון מרגישים שדורטק היא איש המחשבים שלכם בתוך הארגון.</p>
+        <p>לאחר ביצוע סקר אתר מקיף וביצוע "יישור קו" טכנולוגי, אנו הופכים לכתובת היחידה ולאיש הקשר שלכם מול כל הגורמים: ספקי תקשורת, ספקי תוכנה או כל ספק טכנולוגי אחר. זה מתחיל בהשגת המחיר והדיל המשתלם ביותר עבורכם מהספקים, וממשיך בניהול השוטף ובטיפול המלא בתקלות מולם.</p>
+        <p>אצלנו לא תשמעו יותר מספק התוכנה ש"הבעיה היא במחשב", ולא תשמעו מספק המחשוב ש"הבעיה היא בתוכנה". כל פנייה נעשית ישירות לדורטק, ואנחנו מנהלים את האירוע מול הספקים עד לפתרון המלא. אנחנו לוקחים את האחריות כדי שאתם תוכלו להתמקד בניהול העסק שלכם בשקט.</p>
+    </div>
+
+    <div class="responsibility-box">
+        <div class="content-section" style="padding:0;">
+            <h2>אחריות כוללת וביטחון טכנולוגי</h2>
+            <p>אנו מציעים תוכנית תמיכה בריטיינר המבוססת על קבלת אחריות כוללת על מערך המחשוב של הארגון. <span class="highlight-main">המודל הזה מאפשר לכם לקבל תמיכה ותחזוקה במערך המחשוב על פי סכום קבוע מראש, וללא הגבלה בשעות. זהו הבסיס לאמינות שלנו: אנחנו מחויבים לתוצאה, לא לשעות העבודה.</span></p>
+            <p>בנוסף למודל הריטיינר, דורטק מעמידה לרשות ארגונים גדולים פתרונות מיקור חוץ (Outsourcing) בהתאמה אישית, הכוללים הצבת מומחי IT מקצועיים, מנמ"רים או אנשי סיסטם במשרה מלאה או חלקית בתוך הארגון. כל עובד המועסק בארגונכם נהנה מליווי, גיבוי מקצועי ומעטפת הידע הרחבה של דורטק ניהול מערכות מידע.</p>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>מוצרים ופתרונות</h2>
+        <div class="expertise-grid">
+            <a href="services-he.html#consulting" class="expertise-link"><span>ייעוץ ותכנון אסטרטגי</span> <i>←</i></a>
+            <a href="services-he.html#infrastructure" class="expertise-link"><span>תשתיות תקשורת ומתח נמוך</span> <i>←</i></a>
+            <a href="services-he.html#virtualization" class="expertise-link"><span>וירטואליזציה ושרתים</span> <i>←</i></a>
+            <a href="services-he.html#security" class="expertise-link"><span>אבטחת מידע</span> <i>←</i></a>
+            <a href="services-he.html#cloud" class="expertise-link"><span>מחשוב ענן</span> <i>←</i></a>
+            <a href="services-he.html#hardware" class="expertise-link"><span>אספקת חומרה ותוכנה</span> <i>←</i></a>
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="Dortech logo.png" alt="דורטק" style="height: 48px; margin-bottom: 15px;">
+                <p>דורטק מספקת פתרונות טכנולוגיים מקיפים משנת 2001, תוך דגש על שירות אנושי ופתרונות המותאמים אישית.</p>
+            </div>
+            <div class="footer-col">
+                <h4>ניווט מהיר</h4>
+                <div class="footer-links">
+                    <a href="index.html">דף הבית</a>
+                    <a href="about-he.html">אודותינו</a>
+                    <a href="services-he.html">פתרונות</a>
+                    <a href="customers-he.html">לקוחות</a>
+                    <a href="careers-he.html">קריירה</a>
+                    <a href="contact-he.html">צור קשר</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>פרטי התקשרות</h4>
+                <p><b>📞 טלפון:</b> 03-5751070</p>
+                <p><b>📧 דוא"ל:</b> info@dortech.co.il</p>
+                <p><b>📍 כתובת:</b> ז'בוטינסקי 7, מגדל משה אביב, רמת גן</p>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:2.5rem; color:var(--text-dim); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem; font-size:0.85rem;">
+            &copy; 2026 דורטק ניהול מערכות מידע בע"מ. כל הזכויות שמורות.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
