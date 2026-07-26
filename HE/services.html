@@ -32,15 +32,21 @@
         header { padding: 0.8rem 0; background: linear-gradient(to bottom, var(--header-bg) 0%, var(--bg-deep) 100%); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(0, 210, 255, 0.15); }
         .header-flex { display: flex; justify-content: space-between; align-items: center; }
         .logo-img { height: 65px; width: auto; }
+        nav { display: flex; align-items: center; }
         nav a { text-decoration: none; color: var(--text-light); margin-right: 2rem; font-weight: 600; transition: 0.3s; }
         nav a:hover, nav a.active { color: var(--neon-blue); }
+
+        /* Language Switcher */
+        .lang-switch { margin-right: 2rem; border-right: 1px solid rgba(255,255,255,0.2); padding-right: 1.5rem; }
+        .lang-link { color: var(--neon-blue); text-decoration: none; font-weight: 800; font-size: 0.9rem; border: 1px solid var(--neon-blue); padding: 4px 10px; border-radius: 4px; transition: 0.3s; }
+        .lang-link:hover { background: var(--neon-blue); color: #000; }
 
         /* HERO */
         .hero-section { padding: 4rem 0 1.5rem; text-align: right; }
         .hero-section h1 { font-size: 3.2rem; color: #fff; margin: 0; }
         .hero-section h1 b { color: var(--neon-blue); font-weight: 800; }
 
-        /* SERVICE BLOCKS (Reduced Spacing) */
+        /* SERVICE BLOCKS */
         .service-block { padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); scroll-margin-top: 100px; }
         .service-block:last-child { border-bottom: none; }
         
@@ -68,14 +74,17 @@
 
 <header>
     <div class="container header-flex">
-        <a href="index.html"><img src="Dortech%20logo.png" alt="דורטק" class="logo-img"></a>
+        <a href="../index.html"><img src="../Assets/Dortech%20logo.png" alt="דורטק" class="logo-img"></a>
         <nav>
-            <a href="index.html">בית</a>
-            <a href="../about-he.html">אודות</a>
-            <a href="../services-he.html" class="active">פתרונות</a>
-            <a href="../customers-he.html">לקוחות</a>
-            <a href="../careers-he.html">קריירה</a>
-            <a href="../contact-he.html">צור קשר</a>
+            <a href="../index.html">בית</a>
+            <a href="about.html">אודות</a>
+            <a href="services.html" class="active">פתרונות</a>
+            <a href="customers.html">לקוחות</a>
+            <a href="careers.html">קריירה</a>
+            <a href="contact.html">צור קשר</a>
+            <div class="lang-switch">
+                <a href="../EN/services.html" class="lang-link">English</a>
+            </div>
         </nav>
     </div>
 </header>
@@ -120,18 +129,18 @@
     <div class="container">
         <div class="footer-grid">
             <div class="footer-col">
-                <img src="Dortech%20logo.png" alt="דורטק" style="height: 48px; margin-bottom: 15px;">
+                <img src="../Assets/Dortech%20logo.png" alt="דורטק" style="height: 48px; margin-bottom: 15px;">
                 <p>דורטק מספקת פתרונות טכנולוגיים מקיפים משנת 2001, תוך דגש על שירות אנושי ופתרונות המותאמים אישית.</p>
             </div>
             <div class="footer-col">
                 <h4>ניווט מהיר</h4>
                 <div class="footer-links">
-                    <a href="index.html">דף הבית</a>
-                    <a href="../about-he.html">אודותינו</a>
-                    <a href="../services-he.html">פתרונות</a>
-                    <a href="../customers-he.html">לקוחות</a>
-                    <a href="../careers-he.html">קריירה</a>
-                    <a href="../contact-he.html">צור קשר</a>
+                    <a href="../index.html">דף הבית</a>
+                    <a href="about.html">אודותינו</a>
+                    <a href="services.html">פתרונות</a>
+                    <a href="customers.html">לקוחות</a>
+                    <a href="careers.html">קריירה</a>
+                    <a href="contact.html">צור קשר</a>
                 </div>
             </div>
             <div class="footer-col">

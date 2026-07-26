@@ -34,7 +34,11 @@
         nav { display: flex; align-items: center; }
         nav a { text-decoration: none; color: var(--text-light); margin-left: 2rem; font-weight: 600; transition: 0.3s; font-size: 1rem; }
         nav a:hover, nav a.active { color: var(--neon-blue); }
-        .lang-switch { color: var(--dortech-orange) !important; font-weight: 800; border: 1px solid var(--dortech-orange); padding: 2px 8px; border-radius: 4px; }
+
+        /* Language Switcher */
+        .lang-switch { margin-left: 2rem; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 1.5rem; }
+        .lang-link { color: var(--neon-blue); text-decoration: none; font-weight: 800; font-size: 0.9rem; border: 1px solid var(--neon-blue); padding: 4px 10px; border-radius: 4px; transition: 0.3s; }
+        .lang-link:hover { background: var(--neon-blue); color: #000; }
 
         /* HERO */
         .about-hero { padding: 4rem 0 1.5rem; text-align: left; }
@@ -88,7 +92,7 @@
         .footer-col h4 { color: #fff; margin: 0 0 1.2rem 0; position: relative; padding-bottom: 0.4rem; }
         .footer-col h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 35px; height: 2px; background: var(--dortech-orange); }
         .footer-col p { color: var(--text-dim); font-size: 0.95rem; margin: 0 0 0.8rem 0; }
-        .footer-links a { color: var(--text-dim); text-decoration: none; display: block; margin-bottom: 0.6rem; font-size: 0.95rem; }
+        .footer-links a { color: var(--text-dim); text-decoration: none; display: block; margin-bottom: 0.6rem; font-size: 0.95rem; transition: 0.2s; }
         .footer-links a:hover { color: var(--neon-blue); }
 
         @media (max-width: 768px) {
@@ -101,15 +105,17 @@
 
 <header>
     <div class="container header-flex">
-        <a href="index-en.html"><img src="Dortech logo.png" alt="Dortech" class="logo-img"></a>
+        <a href="index.html"><img src="../Assets/Dortech%20logo.png" alt="Dortech" class="logo-img"></a>
         <nav>
-            <a href="index-en.html">Home</a>
-            <a href="about-en.html" class="active">About</a>
-            <a href="services-en.html">Solutions</a>
-            <a href="customers-en.html">Customers</a>
-            <a href="careers-en.html">Careers</a>
-            <a href="contact-en.html">Contact</a>
-            <a href="about-he.html" class="lang-switch">HE</a>
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="services.html">Solutions</a>
+            <a href="customers.html">Customers</a>
+            <a href="careers.html">Careers</a>
+            <a href="contact.html">Contact</a>
+            <div class="lang-switch">
+                <a href="../HE/about.html" class="lang-link">עברית</a>
+            </div>
         </nav>
     </div>
 </header>
@@ -143,12 +149,12 @@
     <div class="content-section">
         <h2>Products & Solutions</h2>
         <div class="expertise-grid">
-            <a href="services-en.html#consulting" class="expertise-link"><span>Strategic Consulting & Planning</span> <i>→</i></a>
-            <a href="services-en.html#infrastructure" class="expertise-link"><span>Infrastructure & Low Voltage</span> <i>→</i></a>
-            <a href="services-en.html#virtualization" class="expertise-link"><span>Virtualization & Servers</span> <i>→</i></a>
-            <a href="services-en.html#security" class="expertise-link"><span>Information Security</span> <i>→</i></a>
-            <a href="services-en.html#cloud" class="expertise-link"><span>Cloud Computing</span> <i>→</i></a>
-            <a href="services-en.html#hardware" class="expertise-link"><span>Hardware & Software Supply</span> <i>→</i></a>
+            <a href="services.html#consulting" class="expertise-link"><span>Strategic Consulting & Planning</span> <i>→</i></a>
+            <a href="services.html#infrastructure" class="expertise-link"><span>Infrastructure & Low Voltage</span> <i>→</i></a>
+            <a href="services.html#virtualization" class="expertise-link"><span>Virtualization & Servers</span> <i>→</i></a>
+            <a href="services.html#security" class="expertise-link"><span>Information Security</span> <i>→</i></a>
+            <a href="services.html#cloud" class="expertise-link"><span>Cloud Computing</span> <i>→</i></a>
+            <a href="services.html#hardware" class="expertise-link"><span>Hardware & Software Supply</span> <i>→</i></a>
         </div>
     </div>
 </main>
@@ -157,18 +163,18 @@
     <div class="container">
         <div class="footer-grid">
             <div class="footer-col">
-                <img src="Dortech logo.png" alt="Dortech" style="height: 48px; margin-bottom: 15px;">
+                <img src="../Assets/Dortech%20logo.png" alt="Dortech" style="height: 48px; margin-bottom: 15px;">
                 <p>Dortech provides comprehensive technological solutions since 2001, focusing on human service and customized solutions.</p>
             </div>
             <div class="footer-col">
                 <h4>Quick Navigation</h4>
                 <div class="footer-links">
-                    <a href="index-en.html">Home</a>
-                    <a href="about-en.html">About Us</a>
-                    <a href="services-en.html">Solutions</a>
-                    <a href="customers-en.html">Customers</a>
-                    <a href="careers-en.html">Careers</a>
-                    <a href="contact-en.html">Contact Us</a>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Solutions</a>
+                    <a href="customers.html">Customers</a>
+                    <a href="careers.html">Careers</a>
+                    <a href="contact.html">Contact Us</a>
                 </div>
             </div>
             <div class="footer-col">

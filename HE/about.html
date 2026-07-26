@@ -31,8 +31,14 @@
         header { padding: 0.8rem 0; background: linear-gradient(to bottom, var(--header-bg) 0%, var(--bg-deep) 100%); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(0, 210, 255, 0.15); }
         .header-flex { display: flex; justify-content: space-between; align-items: center; }
         .logo-img { height: 65px; width: auto; }
+        nav { display: flex; align-items: center; }
         nav a { text-decoration: none; color: var(--text-light); margin-right: 2rem; font-weight: 600; transition: 0.3s; }
         nav a:hover, nav a.active { color: var(--neon-blue); }
+
+        /* Language Switcher */
+        .lang-switch { margin-right: 2rem; border-right: 1px solid rgba(255,255,255,0.2); padding-right: 1.5rem; }
+        .lang-link { color: var(--neon-blue); text-decoration: none; font-weight: 800; font-size: 0.9rem; border: 1px solid var(--neon-blue); padding: 4px 10px; border-radius: 4px; transition: 0.3s; }
+        .lang-link:hover { background: var(--neon-blue); color: #000; }
 
         /* HERO */
         .about-hero { padding: 4rem 0 1.5rem; text-align: right; }
@@ -40,7 +46,7 @@
         .about-hero h1 b { color: var(--neon-blue); font-weight: 800; }
         .tagline { color: var(--dortech-orange); font-size: 1.4rem; font-weight: 600; margin: 0.2rem 0 0; }
 
-        /* CONTENT & SPACING (Reduced Margins) */
+        /* CONTENT & SPACING */
         .content-section { padding: 1.2rem 0; text-align: right; }
         .content-section h2 { color: var(--neon-blue); font-size: 2rem; margin: 0 0 0.8rem 0; position: relative; display: inline-block; padding-bottom: 5px; }
         .content-section h2::after { content: ''; position: absolute; bottom: 0; right: 0; width: 50px; height: 3px; background: var(--dortech-orange); }
@@ -99,12 +105,15 @@
 
 <header>
     <div class="container header-flex">
-        <a href="index.html"><img src="Dortech logo.png" alt="דורטק" class="logo-img"></a>
+        <a href="../index.html"><img src="../Assets/Dortech%20logo.png" alt="דורטק" class="logo-img"></a>
         <nav>
-            <a href="index.html">בית</a>
-            <a href="about-he.html" class="active">אודות</a>
-            <a href="services-he.html">פתרונות</a>
-            <a href="contact-he.html">צור קשר</a>
+            <a href="../index.html">בית</a>
+            <a href="about.html" class="active">אודות</a>
+            <a href="services.html">פתרונות</a>
+            <a href="contact.html">צור קשר</a>
+            <div class="lang-switch">
+                <a href="../EN/about.html" class="lang-link">English</a>
+            </div>
         </nav>
     </div>
 </header>
@@ -138,12 +147,12 @@
     <div class="content-section">
         <h2>מוצרים ופתרונות</h2>
         <div class="expertise-grid">
-            <a href="services-he.html#consulting" class="expertise-link"><span>ייעוץ ותכנון אסטרטגי</span> <i>←</i></a>
-            <a href="services-he.html#infrastructure" class="expertise-link"><span>תשתיות תקשורת ומתח נמוך</span> <i>←</i></a>
-            <a href="services-he.html#virtualization" class="expertise-link"><span>וירטואליזציה ושרתים</span> <i>←</i></a>
-            <a href="services-he.html#security" class="expertise-link"><span>אבטחת מידע</span> <i>←</i></a>
-            <a href="services-he.html#cloud" class="expertise-link"><span>מחשוב ענן</span> <i>←</i></a>
-            <a href="services-he.html#hardware" class="expertise-link"><span>אספקת חומרה ותוכנה</span> <i>←</i></a>
+            <a href="services.html#consulting" class="expertise-link"><span>ייעוץ ותכנון אסטרטגי</span> <i>←</i></a>
+            <a href="services.html#infrastructure" class="expertise-link"><span>תשתיות תקשורת ומתח נמוך</span> <i>←</i></a>
+            <a href="services.html#virtualization" class="expertise-link"><span>וירטואליזציה ושרתים</span> <i>←</i></a>
+            <a href="services.html#security" class="expertise-link"><span>אבטחת מידע</span> <i>←</i></a>
+            <a href="services.html#cloud" class="expertise-link"><span>מחשוב ענן</span> <i>←</i></a>
+            <a href="services.html#hardware" class="expertise-link"><span>אספקת חומרה ותוכנה</span> <i>←</i></a>
         </div>
     </div>
 </main>
@@ -152,18 +161,18 @@
     <div class="container">
         <div class="footer-grid">
             <div class="footer-col">
-                <img src="Dortech logo.png" alt="דורטק" style="height: 48px; margin-bottom: 15px;">
+                <img src="../Assets/Dortech%20logo.png" alt="דורטק" style="height: 48px; margin-bottom: 15px;">
                 <p>דורטק מספקת פתרונות טכנולוגיים מקיפים משנת 2001, תוך דגש על שירות אנושי ופתרונות המותאמים אישית.</p>
             </div>
             <div class="footer-col">
                 <h4>ניווט מהיר</h4>
                 <div class="footer-links">
-                    <a href="index.html">דף הבית</a>
-                    <a href="about-he.html">אודותינו</a>
-                    <a href="services-he.html">פתרונות</a>
-                    <a href="customers-he.html">לקוחות</a>
-                    <a href="careers-he.html">קריירה</a>
-                    <a href="contact-he.html">צור קשר</a>
+                    <a href="../index.html">דף הבית</a>
+                    <a href="about.html">אודותינו</a>
+                    <a href="services.html">פתרונות</a>
+                    <a href="customers.html">לקוחות</a>
+                    <a href="careers.html">קריירה</a>
+                    <a href="contact.html">צור קשר</a>
                 </div>
             </div>
             <div class="footer-col">

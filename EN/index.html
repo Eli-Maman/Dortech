@@ -39,11 +39,12 @@
         .logo-img { height: 65px; width: auto; display: block; filter: drop-shadow(0 0 10px rgba(0, 210, 255, 0.1)); }
         
         nav { display: flex; align-items: center; }
-        nav a { text-decoration: none; color: var(--text-light); margin-right: 2.1rem; font-weight: 600; font-size: 1.1rem; transition: 0.3s; }
-        nav a:hover { color: var(--neon-blue); }
+        nav a { text-decoration: none; color: var(--text-light); margin-left: 2.1rem; font-weight: 600; font-size: 1.1rem; transition: 0.3s; }
+        nav a:hover, nav a.active { color: var(--neon-blue); }
 
         .lang-switch { margin-left: 2rem; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 1.5rem; }
-        .lang-link { color: var(--neon-blue); text-decoration: none; font-weight: 800; font-size: 0.9rem; border: 1px solid var(--neon-blue); padding: 4px 10px; border-radius: 4px; }
+        .lang-link { color: var(--neon-blue); text-decoration: none; font-weight: 800; font-size: 0.9rem; border: 1px solid var(--neon-blue); padding: 4px 10px; border-radius: 4px; transition: 0.3s; }
+        .lang-link:hover { background: var(--neon-blue); color: #000; }
 
         /* --- Hero Section --- */
         .hero { 
@@ -51,7 +52,7 @@
             display: flex; 
             align-items: center; 
             background: linear-gradient(to right, rgba(11, 15, 26, 1) 35%, rgba(11, 15, 26, 0.2) 100%), 
-                        url('Photo1.jpg') no-repeat right center / contain; 
+                        url('../Assets/Photo1.jpg') no-repeat right center / contain; 
             padding: 2.5rem 0; 
         }
         
@@ -64,7 +65,8 @@
         .hero h1 { font-size: 4rem; font-weight: 200; margin-bottom: 1.5rem; color: #fff; line-height: 1.1; }
         .hero h1 b { color: var(--neon-blue); font-weight: 700; text-shadow: 0 0 25px rgba(0, 210, 255, 0.5); }
         .hero .description { font-size: 1.3rem; max-width: 550px; color: var(--text-dim); margin-bottom: 3rem; }
-        .btn-orange { background: var(--dortech-orange); color: #000; padding: 1.1rem 3.5rem; border-radius: 4px; text-decoration: none; font-weight: 800; font-size: 1.25rem; display: inline-block; box-shadow: 0 0 15px rgba(255, 157, 0, 0.4); }
+        .btn-orange { background: var(--dortech-orange); color: #000; padding: 1.1rem 3.5rem; border-radius: 4px; text-decoration: none; font-weight: 800; font-size: 1.25rem; display: inline-block; box-shadow: 0 0 15px rgba(255, 157, 0, 0.4); transition: 0.3s; }
+        .btn-orange:hover { background: #e68d00; }
 
         /* --- Grid --- */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
@@ -86,7 +88,8 @@
         .footer-col h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 2px; background: var(--dortech-orange); }
         .footer-links { list-style: none; padding: 0; }
         .footer-links li { margin-bottom: 0.8rem; }
-        .footer-links a { color: var(--text-dim); text-decoration: none; font-size: 1rem; }
+        .footer-links a { color: var(--text-dim); text-decoration: none; font-size: 1rem; transition: 0.2s; }
+        .footer-links a:hover { color: var(--neon-blue); }
 
         /* --- Accessibility Menu --- */
         #accessibility-nav { position: fixed; right: 20px; bottom: 20px; z-index: 2001; }
@@ -106,20 +109,20 @@
         <h4 style="color:#000; margin-top:0; text-align:center;">Accessibility</h4>
         <button class="acc-option" onclick="accAction('large-text', this)">Large Text</button>
         <button class="acc-option" onclick="accAction('high-contrast', this)">High Contrast</button>
-        <button class="acc-option" onclick="accAction('highlight-links', this)">Highlight Links</button>
         <button class="acc-option" style="background:#ef4444; color:#fff;" onclick="accAction('reset')">Reset Settings</button>
     </div>
 </div>
 
 <header>
     <div class="container header-flex">
-        <a href="index-en.html"><img src="Dortech logo.png" alt="DORTECH" class="logo-img"></a>
+        <a href="index.html"><img src="../Assets/Dortech%20logo.png" alt="DORTECH" class="logo-img"></a>
         <nav>
-            <a href="about-en.html">About</a>
-            <a href="services-en.html">Solutions</a>
-            <a href="contact-en.html">Contact Us</a>
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Solutions</a>
+            <a href="contact.html">Contact Us</a>
             <div class="lang-switch">
-                <a href="index.html" class="lang-link">Hebrew</a>
+                <a href="../index.html" class="lang-link">עברית</a>
             </div>
         </nav>
     </div>
@@ -130,7 +133,7 @@
         <div class="hero-left-side">
             <h1>We handle the tech. <b>Enjoy the peace of mind.</b></h1>
             <p class="description">Dortech provides end-to-end IT solutions, cybersecurity, and communication infrastructure. We deliver professional IT management with a human-to-human approach above all. We implement advanced digital tools tailored to each client's specific needs and budget, aimed at streamlining processes, minimizing faults, and technological confidence.</p>
-            <a href="contact-en.html" class="btn-orange">Let's Get Started</a>
+            <a href="contact.html" class="btn-orange">Let's Get Started</a>
         </div>
     </section>
 
@@ -169,18 +172,18 @@
     <div class="container">
         <div class="footer-grid">
             <div class="footer-col">
-                <img src="Dortech logo.png" alt="DORTECH" style="height: 48px; margin-bottom: 20px;">
+                <img src="../Assets/Dortech%20logo.png" alt="DORTECH" style="height: 48px; margin-bottom: 20px;">
                 <p>Dortech has been providing comprehensive technological solutions since 2001, focusing on human service and personalized solutions.</p>
             </div>
             <div class="footer-col">
                 <h4>Quick Links</h4>
                 <ul class="footer-links">
-                    <li><a href="index-en.html">Home</a></li>
-                    <li><a href="about-en.html">About Us</a></li>
-                    <li><a href="services-en.html">Solutions</a></li>
-                    <li><a href="customers-en.html">Customers</a></li>
-                    <li><a href="careers-en.html">Careers</a></li>
-                    <li><a href="contact-en.html">Contact Us</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Solutions</a></li>
+                    <li><a href="customers.html">Customers</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -192,7 +195,7 @@
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
+        <div class="footer-bottom" style="text-align:center; color:var(--text-dim); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem; font-size:0.85rem;">
             &copy; 2026 Dortech IT Management Ltd. All Rights Reserved.
         </div>
     </div>
