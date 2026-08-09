@@ -53,7 +53,7 @@
         .content-section p { font-size: 1.15rem; color: var(--text-dim); margin: 0 0 0.8rem 0; text-align: justify; }
 
         /* CLIENT GRID */
-        .client-section { padding: 1rem 0 2rem; }
+        .client-section { padding: 1rem 0 3rem; }
         .client-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -71,31 +71,6 @@
         .client-icon { width: 56px; height: 56px; margin: 0 auto 0.9rem; opacity: 0.85; }
         .client-card h3 { color: #fff; font-size: 1.05rem; margin: 0 0 0.4rem 0; }
         .client-card .client-placeholder { color: var(--text-dim); font-size: 0.82rem; font-style: italic; margin: 0; }
-
-        /* NOTE TO ILANIT BOX */
-        .ilanit-box {
-            background: rgba(255, 157, 0, 0.05);
-            border: 1px dashed rgba(255, 157, 0, 0.4);
-            padding: 2rem 2.2rem;
-            border-radius: 10px;
-            margin: 2.5rem 0 3rem;
-            text-align: right;
-        }
-        .ilanit-box .badge {
-            display: inline-block;
-            background: rgba(255, 157, 0, 0.15);
-            color: var(--dortech-orange);
-            font-weight: 700;
-            font-size: 0.95rem;
-            padding: 5px 16px;
-            border-radius: 20px;
-            margin-bottom: 1rem;
-        }
-        .ilanit-box h2 { color: var(--dortech-orange); }
-        .ilanit-box h2::after { background: var(--neon-blue); }
-        .ilanit-box p { color: var(--text-dim); font-size: 1.05rem; text-align: right; margin: 0 0 0.9rem 0; }
-        .ilanit-box p:last-child { margin-bottom: 0; }
-        .ilanit-box b { color: var(--text-light); }
 
         /* FOOTER */
         .site-footer { background-color: var(--footer-bg); padding: 3.5rem 0 1.5rem; border-top: 1px solid rgba(0, 210, 255, 0.1); margin-top: 3rem; }
@@ -141,7 +116,7 @@
 
     <div class="content-section">
         <h2>לקוחות נבחרים</h2>
-        <p>לאורך השנים זכתה דורטק באמון של ארגונים מגוונים במגזר העסקי, הציבורי והמוסדי. להלן חלק מהלקוחות איתם אנו גאים לעבוד (לוגואים בדרך - ראו הערה למטה):</p>
+        <p>לאורך השנים זכתה דורטק באמון של ארגונים מגוונים במגזר העסקי, הציבורי והמוסדי. להלן חלק מהלקוחות איתם אנו גאים לעבוד:</p>
     </div>
 
     <section class="client-section">
@@ -149,75 +124,102 @@
 
             <div class="client-card">
                 <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <h3>מגדל משה אביב</h3>
+                <h3>ההסתדרות לרפואת שיניים בישראל</h3>
                 <p class="client-placeholder">לוגו בדרך מאילנית</p>
             </div>
 
             <div class="client-card">
                 <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <h3>רוטשילד 22</h3>
+                <h3>Marex</h3>
                 <p class="client-placeholder">לוגו בדרך מאילנית</p>
             </div>
 
             <div class="client-card">
                 <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <h3>מתחם הילס</h3>
+                <h3>D.M Benatav</h3>
                 <p class="client-placeholder">לוגו בדרך מאילנית</p>
             </div>
 
             <div class="client-card">
                 <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <h3>ד.מ בנטב</h3>
+                <h3>החברה הפסיכואנאליטית</h3>
                 <p class="client-placeholder">לוגו בדרך מאילנית</p>
             </div>
 
             <div class="client-card">
                 <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <h3>קרן כהן</h3>
+                <h3>KCB קרן כהן בלחרסקי עו״ד</h3>
                 <p class="client-placeholder">לוגו בדרך מאילנית</p>
             </div>
 
             <div class="client-card">
                 <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <h3>משרד התקשורת</h3>
+                <h3>מגדל משה אביב ניהול</h3>
                 <p class="client-placeholder">לוגו בדרך מאילנית</p>
             </div>
 
             <div class="client-card">
                 <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <h3>רשת ש"ס</h3>
+                <h3>מתחם הילס ניהול</h3>
                 <p class="client-placeholder">לוגו בדרך מאילנית</p>
             </div>
 
             <div class="client-card">
                 <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <h3>אל"י</h3>
+                <h3>טורקלטאוב פלפול סגל עו״ד</h3>
                 <p class="client-placeholder">לוגו בדרך מאילנית</p>
             </div>
 
             <div class="client-card">
                 <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <h3>הפסיכומטרי</h3>
+                <h3>תנו לחיות לחיות</h3>
                 <p class="client-placeholder">לוגו בדרך מאילנית</p>
             </div>
 
             <div class="client-card">
                 <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <h3>ההסתדרות לרפואת שיניים</h3>
+                <h3>פורום CFO</h3>
+                <p class="client-placeholder">לוגו בדרך מאילנית</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>פורום ראשי החברות</h3>
+                <p class="client-placeholder">לוגו בדרך מאילנית</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>אגודת אל״י</h3>
+                <p class="client-placeholder">לוגו בדרך מאילנית</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>מגדל רוטשילד 22 ניהול</h3>
+                <p class="client-placeholder">לוגו בדרך מאילנית</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>GOM</h3>
+                <p class="client-placeholder">לוגו בדרך מאילנית</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>Mobfox</h3>
+                <p class="client-placeholder">לוגו בדרך מאילנית</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>Glispa</h3>
                 <p class="client-placeholder">לוגו בדרך מאילנית</p>
             </div>
 
         </div>
     </section>
-
-    <div class="ilanit-box">
-        <span class="badge">📋 משימה לאילנית (כן, את, שקוראת את זה עכשיו)</span>
-        <h2>אילנית, התור שלך!</h2>
-        <p>כדי שהעמוד הזה יעבור מ"רשימת שמות משעממת" ל"עמוד לקוחות מרשים באמת", נצטרך ממך <b>קובצי לוגו</b> (PNG או SVG, רקע שקוף אם יש) לכל אחד מהלקוחות ברשימה למעלה. אפשר בקובץ אחד מרוכז או כל אחד בנפרד - מה שנוח לך.</p>
-        <p>אגב, שמנו לב שבאימייל המקורי את שאלת אותנו "יש לכם עוד מישהו לשים?" - אז עכשיו אנחנו שואלים אותך בחזרה, באותה נשימה בדיוק: <b>יש עוד לקוחות שכדאי להוסיף לרשימה?</b> תחושת דז'ה-וו, אנחנו יודעים.</p>
-        <p>גם אם כתבנו איזה שם לא מדויק (למשל האיות של "ד.מ בנטב") - תתקני אותנו בלי היסוס, פשוט העתקנו מה שהיה באימייל.</p>
-        <p>ולפני שהעמוד יוצא לאור עולם: כדאי לוודא שאפשר להציג בפומבי את כל השמות האלה (בייחוד גופים ממשלתיים/מוסדיים) - יכול להיות שצריך אישור שיווקי מהם קודם. בינתיים אל תדאגי, זה עולה רק בפריסה פנימית ולא גלוי לציבור. 🙂</p>
-    </div>
 </main>
 
 <footer class="site-footer">
