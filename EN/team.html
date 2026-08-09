@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | Dortech Information Technology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #0b0f1a;
+            --header-bg: #121929;
+            --footer-bg: #070a12;
+            --neon-blue: #00d2ff;
+            --dortech-orange: #ff9d00;
+            --text-light: #f1f5f9;
+            --text-dim: #94a3b8;
+        }
+
+        body { 
+            font-family: 'Assistant', sans-serif; 
+            margin: 0; 
+            background-color: var(--bg-deep); 
+            color: var(--text-light); 
+            line-height: 1.5; 
+            overflow-x: hidden;
+        }
+        
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; box-sizing: border-box; }
+
+        /* HEADER */
+        header { padding: 0.8rem 0; background: linear-gradient(to bottom, var(--header-bg) 0%, var(--bg-deep) 100%); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(0, 210, 255, 0.15); }
+        .header-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo-img { height: 65px; width: auto; }
+        nav { display: flex; align-items: center; }
+        nav a { text-decoration: none; color: var(--text-light); margin-left: 2rem; font-weight: 600; transition: 0.3s; font-size: 1rem; }
+        nav a:hover, nav a.active { color: var(--neon-blue); }
+
+        /* Language Switcher */
+        .lang-switch { margin-left: 2rem; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 1.5rem; }
+        .lang-link { color: var(--neon-blue); text-decoration: none; font-weight: 800; font-size: 0.9rem; border: 1px solid var(--neon-blue); padding: 4px 10px; border-radius: 4px; transition: 0.3s; }
+        .lang-link:hover { background: var(--neon-blue); color: #000; }
+
+        /* HERO */
+        .team-hero { padding: 4rem 0 1.5rem; text-align: left; }
+        .team-hero h1 { font-size: 3.2rem; color: #fff; margin: 0; }
+        .team-hero h1 b { color: var(--neon-blue); font-weight: 800; }
+        .team-hero p.tagline { color: var(--dortech-orange); font-size: 1.4rem; font-weight: 600; margin: 0.2rem 0 0; }
+
+        /* TEAM GRID */
+        .team-section { padding: 2rem 0 3rem; }
+        .team-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); 
+            gap: 1.8rem; 
+        }
+        .team-card { 
+            background: rgba(255, 255, 255, 0.02); 
+            border: 1px solid rgba(255,255,255,0.06); 
+            border-radius: 12px; 
+            padding: 1.6rem 1.2rem; 
+            text-align: center; 
+            transition: 0.3s; 
+        }
+        .team-card:hover { border-color: var(--neon-blue); background: rgba(0, 210, 255, 0.04); transform: translateY(-4px); }
+        .team-avatar { 
+            width: 120px; 
+            height: 120px; 
+            margin: 0 auto 1rem; 
+            border-radius: 50%; 
+            overflow: hidden; 
+            box-shadow: 0 0 0 3px rgba(0, 210, 255, 0.15); 
+        }
+        .team-avatar svg { width: 100%; height: 100%; display: block; }
+        .team-card h3 { color: #fff; font-size: 1.15rem; margin: 0 0 0.3rem 0; }
+        .team-card .team-title { color: var(--dortech-orange); font-weight: 600; font-size: 0.92rem; margin: 0 0 0.9rem 0; }
+        .team-card .team-placeholder { color: var(--text-dim); font-size: 0.82rem; font-style: italic; line-height: 1.45; margin: 0; }
+
+        /* FOOTER */
+        .site-footer { background-color: var(--footer-bg); padding: 3.5rem 0 1.5rem; border-top: 1px solid rgba(0, 210, 255, 0.1); margin-top: 3rem; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1.5fr; gap: 3rem; }
+        .footer-col h4 { color: #fff; margin: 0 0 1.2rem 0; position: relative; padding-bottom: 0.4rem; }
+        .footer-col h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 35px; height: 2px; background: var(--dortech-orange); }
+        .footer-col p { color: var(--text-dim); font-size: 0.95rem; margin: 0 0 0.8rem 0; }
+        .footer-links a { color: var(--text-dim); text-decoration: none; display: block; margin-bottom: 0.6rem; font-size: 0.95rem; transition: 0.2s; }
+        .footer-links a:hover { color: var(--neon-blue); }
+
+        @media (max-width: 768px) {
+            .team-hero h1 { font-size: 2.5rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-flex">
+        <a href="index.html"><img src="../Assets/Dortech%20logo.png" alt="Dortech" class="logo-img"></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Solutions</a>
+            <a href="projects.html">Projects</a>
+            <a href="team.html" class="active">Team</a>
+            <a href="customers.html">Customers</a>
+            <a href="careers.html">Careers</a>
+            <a href="contact.html">Contact</a>
+            <div class="lang-switch">
+                <a href="../HE/team.html" class="lang-link">עברית</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <section class="team-hero">
+        <h1>Our <b>Team</b></h1>
+        <p class="tagline">The people behind your technological peace of mind</p>
+    </section>
+
+    <section class="team-section">
+        <div class="team-grid">
+
+            <div class="team-card">
+                <div class="team-avatar">
+                    <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="60" cy="60" r="60" fill="#123354"/>
+                        <path d="M60 120c-22 0-34-10-34-10s2-16 12-20c6 8 14 12 22 12s16-4 22-12c10 4 12 20 12 20s-12 10-34 10Z" fill="#0a1f38"/>
+                        <circle cx="60" cy="66" r="32" fill="#e8b892"/>
+                        <path d="M30 58c0-20 14-32 30-32s30 12 30 32c-6-6-16-10-30-10s-24 4-30 10Z" fill="#2b2320"/>
+                        <circle cx="49" cy="66" r="3.5" fill="#2b2320"/>
+                        <circle cx="71" cy="66" r="3.5" fill="#2b2320"/>
+                        <path d="M50 80c4 5 16 5 20 0" stroke="#2b2320" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        <path d="M52 96h16l-4 20h-8Z" fill="#00d2ff"/>
+                    </svg>
+                </div>
+                <h3>Eli Maman</h3>
+                <p class="team-title">CEO</p>
+                <p class="team-placeholder">Ilanit will add a wedding photo and a short bio covering knowledge, skills, and experience soon.</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-avatar">
+                    <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="60" cy="60" r="60" fill="#5c2a4d"/>
+                        <path d="M60 120c-22 0-34-10-34-10s2-16 12-20c6 8 14 12 22 12s16-4 22-12c10 4 12 20 12 20s-12 10-34 10Z" fill="#3d1c33"/>
+                        <path d="M26 50c0 26 4 40 4 40h8c-4-16-4-34 0-44Z" fill="#6b3d22"/>
+                        <path d="M94 50c0 26-4 40-4 40h-8c4-16 4-34 0-44Z" fill="#6b3d22"/>
+                        <circle cx="60" cy="66" r="32" fill="#eabf9c"/>
+                        <path d="M28 54c0-20 14-30 32-30s32 10 32 30c-8-8-20-12-32-12s-24 4-32 12Z" fill="#6b3d22"/>
+                        <circle cx="49" cy="66" r="3.5" fill="#2b2320"/>
+                        <circle cx="71" cy="66" r="3.5" fill="#2b2320"/>
+                        <path d="M50 80c4 5 16 5 20 0" stroke="#8a3b3b" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        <circle cx="29" cy="72" r="2.5" fill="#ff9d00"/>
+                        <circle cx="91" cy="72" r="2.5" fill="#ff9d00"/>
+                    </svg>
+                </div>
+                <h3>Ilanit Adika</h3>
+                <p class="team-title">VP & Project Manager</p>
+                <p class="team-placeholder">Ilanit will add a wedding photo and a short bio covering knowledge, skills, and experience soon.</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-avatar">
+                    <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="60" cy="60" r="60" fill="#234d3f"/>
+                        <path d="M60 120c-22 0-34-10-34-10s2-16 12-20c6 8 14 12 22 12s16-4 22-12c10 4 12 20 12 20s-12 10-34 10Z" fill="#173328"/>
+                        <circle cx="60" cy="66" r="32" fill="#f0c9a0"/>
+                        <path d="M30 56c0-18 14-28 30-28s30 10 30 28c-4-6-14-10-30-10s-26 4-30 10Z" fill="#8a5a2e"/>
+                        <circle cx="60" cy="38" r="9" fill="#8a5a2e"/>
+                        <circle cx="49" cy="66" r="3.5" fill="#2b2320"/>
+                        <circle cx="71" cy="66" r="3.5" fill="#2b2320"/>
+                        <path d="M50 80c4 5 16 5 20 0" stroke="#8a3b3b" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3>Sylvia Maman</h3>
+                <p class="team-title">Finance & Operations Manager</p>
+                <p class="team-placeholder">Ilanit will add a wedding photo and a short bio covering knowledge, skills, and experience soon.</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-avatar">
+                    <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="60" cy="60" r="60" fill="#3a2a5c"/>
+                        <path d="M60 120c-22 0-34-10-34-10s2-16 12-20c6 8 14 12 22 12s16-4 22-12c10 4 12 20 12 20s-12 10-34 10Z" fill="#271a3f"/>
+                        <circle cx="60" cy="66" r="32" fill="#e3b083"/>
+                        <path d="M29 57c0-19 14-31 31-31s31 12 31 31c-6-7-17-11-31-11s-25 4-31 11Z" fill="#3a3532"/>
+                        <circle cx="48" cy="67" r="6.5" fill="none" stroke="#dcdcdc" stroke-width="2"/>
+                        <circle cx="72" cy="67" r="6.5" fill="none" stroke="#dcdcdc" stroke-width="2"/>
+                        <path d="M54.5 67h11" stroke="#dcdcdc" stroke-width="2"/>
+                        <path d="M50 82c4 4 16 4 20 0" stroke="#2b2320" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3>Dmitry Feinstein</h3>
+                <p class="team-title">CTO</p>
+                <p class="team-placeholder">Ilanit will add a wedding photo and a short bio covering knowledge, skills, and experience soon.</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-avatar">
+                    <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="60" cy="60" r="60" fill="#2f5c2a"/>
+                        <path d="M60 120c-22 0-34-10-34-10s2-16 12-20c6 8 14 12 22 12s16-4 22-12c10 4 12 20 12 20s-12 10-34 10Z" fill="#1e3d1a"/>
+                        <circle cx="60" cy="66" r="32" fill="#d9a374"/>
+                        <path d="M30 58c0-19 14-30 30-30s30 11 30 30c-6-6-16-9-30-9s-24 3-30 9Z" fill="#4a3324"/>
+                        <circle cx="49" cy="66" r="3.5" fill="#2b2320"/>
+                        <circle cx="71" cy="66" r="3.5" fill="#2b2320"/>
+                        <path d="M48 78q12 6 24 0" stroke="#4a3324" stroke-width="4" fill="none" stroke-linecap="round"/>
+                        <path d="M52 88c4 4 12 4 16 0" stroke="#2b2320" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3>Boris Belinson</h3>
+                <p class="team-title">Network Manager & Field Technician</p>
+                <p class="team-placeholder">Ilanit will add a wedding photo and a short bio covering knowledge, skills, and experience soon.</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-avatar">
+                    <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="60" cy="60" r="60" fill="#37475c"/>
+                        <path d="M60 120c-22 0-34-10-34-10s2-16 12-20c6 8 14 12 22 12s16-4 22-12c10 4 12 20 12 20s-12 10-34 10Z" fill="#232e3d"/>
+                        <circle cx="60" cy="66" r="32" fill="#e8b892"/>
+                        <path d="M28 52c4-14 16-22 32-22s28 8 32 22c-4-4-10-4-14 0-4-6-10-8-18-8s-14 2-18 8c-4-4-10-4-14 0Z" fill="#2b2320"/>
+                        <circle cx="49" cy="66" r="3.5" fill="#2b2320"/>
+                        <circle cx="71" cy="66" r="3.5" fill="#2b2320"/>
+                        <path d="M50 80c4 5 16 5 20 0" stroke="#2b2320" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3>Michael Rachman</h3>
+                <p class="team-title">Network Manager</p>
+                <p class="team-placeholder">Ilanit will add a wedding photo and a short bio covering knowledge, skills, and experience soon.</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-avatar">
+                    <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="60" cy="60" r="60" fill="#5c4a1f"/>
+                        <path d="M60 120c-22 0-34-10-34-10s2-16 12-20c6 8 14 12 22 12s16-4 22-12c10 4 12 20 12 20s-12 10-34 10Z" fill="#3d3115"/>
+                        <circle cx="60" cy="68" r="32" fill="#e3b083"/>
+                        <path d="M26 55c0-20 15-30 34-30s34 10 34 30c0 4-3 4-4 0-2-10-14-18-30-18s-28 8-30 18c-1 4-4 4-4 0Z" fill="#8a6b1f"/>
+                        <rect x="26" y="42" width="68" height="14" rx="7" fill="#8a6b1f"/>
+                        <circle cx="49" cy="68" r="3.5" fill="#2b2320"/>
+                        <circle cx="71" cy="68" r="3.5" fill="#2b2320"/>
+                        <path d="M50 82c4 5 16 5 20 0" stroke="#2b2320" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3>Aviv Chaim</h3>
+                <p class="team-title">Network Manager & Freelance Field Technician</p>
+                <p class="team-placeholder">Ilanit will add a wedding photo and a short bio covering knowledge, skills, and experience soon.</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-avatar">
+                    <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="60" cy="60" r="60" fill="#5c1f24"/>
+                        <path d="M60 120c-22 0-34-10-34-10s2-16 12-20c6 8 14 12 22 12s16-4 22-12c10 4 12 20 12 20s-12 10-34 10Z" fill="#3d1417"/>
+                        <circle cx="60" cy="66" r="32" fill="#d9a374"/>
+                        <circle cx="48" cy="67" r="7" fill="none" stroke="#2b2320" stroke-width="2.5"/>
+                        <circle cx="72" cy="67" r="7" fill="none" stroke="#2b2320" stroke-width="2.5"/>
+                        <path d="M55 67h10" stroke="#2b2320" stroke-width="2.5"/>
+                        <path d="M50 82c4 4 16 4 20 0" stroke="#2b2320" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3>Yaron Adika</h3>
+                <p class="team-title">Information Security Expert (Outsourced)</p>
+                <p class="team-placeholder">Ilanit will add a wedding photo and a short bio covering knowledge, skills, and experience soon.</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-avatar">
+                    <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="60" cy="60" r="60" fill="#1f5c58"/>
+                        <path d="M60 120c-22 0-34-10-34-10s2-16 12-20c6 8 14 12 22 12s16-4 22-12c10 4 12 20 12 20s-12 10-34 10Z" fill="#153d3a"/>
+                        <circle cx="60" cy="66" r="32" fill="#e8b892"/>
+                        <path d="M29 56c0-18 14-29 31-29s31 11 31 29c-6-6-17-10-31-10s-25 4-31 10Z" fill="#241d18"/>
+                        <circle cx="48" cy="67" r="6.5" fill="none" stroke="#dcdcdc" stroke-width="2"/>
+                        <circle cx="72" cy="67" r="6.5" fill="none" stroke="#dcdcdc" stroke-width="2"/>
+                        <path d="M54.5 67h11" stroke="#dcdcdc" stroke-width="2"/>
+                        <path d="M50 81c4 4 16 4 20 0" stroke="#2b2320" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3>Noam Logasi</h3>
+                <p class="team-title">CIO & IT Expert (Outsourced)</p>
+                <p class="team-placeholder">Ilanit will add a wedding photo and a short bio covering knowledge, skills, and experience soon.</p>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="../Assets/Dortech%20logo.png" alt="Dortech" style="height: 48px; margin-bottom: 15px;">
+                <p>Dortech provides comprehensive technological solutions since 2001, focusing on human service and customized solutions.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Navigation</h4>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Solutions</a>
+                    <a href="customers.html">Customers</a>
+                    <a href="careers.html">Careers</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Details</h4>
+                <p><b>📞 Phone:</b> 03-5751070</p>
+                <p><b>📧 Email:</b> info@dortech.co.il</p>
+                <p><b>📍 Address:</b> 7 Jabotinsky St., Moshe Aviv Tower, Ramat Gan</p>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:2.5rem; color:var(--text-dim); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem; font-size:0.85rem;">
+            &copy; 2026 Dortech Information Technology Ltd. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
