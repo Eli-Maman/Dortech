@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Dortech Information Technology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #0b0f1a;
+            --header-bg: #121929;
+            --footer-bg: #070a12;
+            --neon-blue: #00d2ff;
+            --dortech-orange: #ff9d00;
+            --text-light: #f1f5f9;
+            --text-dim: #94a3b8;
+        }
+
+        body {
+            font-family: 'Assistant', sans-serif;
+            margin: 0;
+            background-color: var(--bg-deep);
+            color: var(--text-light);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; box-sizing: border-box; }
+
+        /* HEADER */
+        header { padding: 0.8rem 0; background: linear-gradient(to bottom, var(--header-bg) 0%, var(--bg-deep) 100%); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(0, 210, 255, 0.15); }
+        .header-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo-img { height: 65px; width: auto; }
+        nav { display: flex; align-items: center; }
+        nav a { text-decoration: none; color: var(--text-light); margin-left: 2rem; font-weight: 600; transition: 0.3s; font-size: 1rem; }
+        nav a:hover, nav a.active { color: var(--neon-blue); }
+
+        /* Language Switcher */
+        .lang-switch { margin-left: 2rem; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 1.5rem; }
+        .lang-link { color: var(--neon-blue); text-decoration: none; font-weight: 800; font-size: 0.9rem; border: 1px solid var(--neon-blue); padding: 4px 10px; border-radius: 4px; transition: 0.3s; }
+        .lang-link:hover { background: var(--neon-blue); color: #000; }
+
+        /* HERO */
+        .projects-hero { padding: 4rem 0 1.5rem; text-align: left; }
+        .projects-hero h1 { font-size: 3.2rem; color: #fff; margin: 0; }
+        .projects-hero h1 b { color: var(--neon-blue); font-weight: 800; }
+        .projects-hero p.tagline { color: var(--dortech-orange); font-size: 1.4rem; font-weight: 600; margin: 0.2rem 0 0; }
+
+        /* CONTENT & SPACING */
+        .content-section { padding: 1.2rem 0; text-align: left; }
+        .content-section h2 { color: var(--neon-blue); font-size: 2rem; margin: 0 0 0.8rem 0; position: relative; display: inline-block; padding-bottom: 5px; }
+        .content-section h2::after { content: ''; position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: var(--dortech-orange); }
+        .content-section p { font-size: 1.15rem; color: var(--text-dim); margin: 0 0 0.8rem 0; text-align: justify; }
+
+        /* COMING SOON BOX */
+        .coming-soon-box {
+            background: rgba(0, 210, 255, 0.04);
+            border: 1px dashed rgba(0, 210, 255, 0.3);
+            padding: 2.5rem;
+            border-radius: 10px;
+            margin: 2rem 0 3rem;
+            text-align: center;
+        }
+        .coming-soon-box .badge {
+            display: inline-block;
+            background: rgba(255, 157, 0, 0.12);
+            color: var(--dortech-orange);
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 5px 16px;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+        }
+        .coming-soon-box h2 { display: block; }
+        .coming-soon-box h2::after { left: 50%; transform: translateX(-50%); }
+        .coming-soon-box p { text-align: center; margin: 0 auto; max-width: 640px; }
+
+        /* FOOTER */
+        .site-footer { background-color: var(--footer-bg); padding: 3.5rem 0 1.5rem; border-top: 1px solid rgba(0, 210, 255, 0.1); margin-top: 3rem; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1.5fr; gap: 3rem; }
+        .footer-col h4 { color: #fff; margin: 0 0 1.2rem 0; position: relative; padding-bottom: 0.4rem; }
+        .footer-col h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 35px; height: 2px; background: var(--dortech-orange); }
+        .footer-col p { color: var(--text-dim); font-size: 0.95rem; margin: 0 0 0.8rem 0; }
+        .footer-links a { color: var(--text-dim); text-decoration: none; display: block; margin-bottom: 0.6rem; font-size: 0.95rem; transition: 0.2s; }
+        .footer-links a:hover { color: var(--neon-blue); }
+
+        @media (max-width: 768px) {
+            .projects-hero h1 { font-size: 2.5rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-flex">
+        <a href="index.html"><img src="../Assets/Dortech%20logo.png" alt="Dortech" class="logo-img"></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Solutions</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="team.html">Team</a>
+            <a href="customers.html">Customers</a>
+            <a href="careers.html">Careers</a>
+            <a href="contact.html">Contact</a>
+            <div class="lang-switch">
+                <a href="../HE/projects.html" class="lang-link">עברית</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <section class="projects-hero">
+        <h1>Our <b>Projects</b></h1>
+        <p class="tagline">From planning to full deployment</p>
+    </section>
+
+    <div class="content-section">
+        <h2>Featured Projects</h2>
+        <p>Over more than 25 years of activity, Dortech has supported dozens of organizations in executing complex technology projects - from communication and network infrastructure upgrades, through server room builds and cloud migrations, to information security deployments and custom systems. On every project we accompany the client from planning and consulting, through on-site execution, to handover and ongoing operation.</p>
+    </div>
+
+    <div class="coming-soon-box">
+        <span class="badge">Coming Soon</span>
+        <h2>Project Gallery on the Way</h2>
+        <p>Ilanit will update us soon with photos and further details about the projects we've completed for our clients.</p>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="../Assets/Dortech%20logo.png" alt="Dortech" style="height: 48px; margin-bottom: 15px;">
+                <p>Dortech provides comprehensive technological solutions since 2001, focusing on human service and customized solutions.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Navigation</h4>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Solutions</a>
+                    <a href="customers.html">Customers</a>
+                    <a href="careers.html">Careers</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Details</h4>
+                <p><b>📞 Phone:</b> 03-5751070</p>
+                <p><b>📧 Email:</b> info@dortech.co.il</p>
+                <p><b>📍 Address:</b> 7 Jabotinsky St., Moshe Aviv Tower, Ramat Gan</p>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:2.5rem; color:var(--text-dim); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem; font-size:0.85rem;">
+            &copy; 2026 Dortech Information Technology Ltd. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
