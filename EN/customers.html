@@ -53,7 +53,7 @@
         .content-section p { font-size: 1.15rem; color: var(--text-dim); margin: 0 0 0.8rem 0; text-align: justify; }
 
         /* CLIENT GRID */
-        .client-section { padding: 1rem 0 2rem; }
+        .client-section { padding: 1rem 0 3rem; }
         .client-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -71,31 +71,6 @@
         .client-icon { width: 56px; height: 56px; margin: 0 auto 0.9rem; opacity: 0.85; }
         .client-card h3 { color: #fff; font-size: 1.05rem; margin: 0 0 0.4rem 0; }
         .client-card .client-placeholder { color: var(--text-dim); font-size: 0.82rem; font-style: italic; margin: 0; }
-
-        /* NOTE TO ILANIT BOX */
-        .ilanit-box {
-            background: rgba(255, 157, 0, 0.05);
-            border: 1px dashed rgba(255, 157, 0, 0.4);
-            padding: 2rem 2.2rem;
-            border-radius: 10px;
-            margin: 2.5rem 0 3rem;
-            text-align: left;
-        }
-        .ilanit-box .badge {
-            display: inline-block;
-            background: rgba(255, 157, 0, 0.15);
-            color: var(--dortech-orange);
-            font-weight: 700;
-            font-size: 0.95rem;
-            padding: 5px 16px;
-            border-radius: 20px;
-            margin-bottom: 1rem;
-        }
-        .ilanit-box h2 { color: var(--dortech-orange); }
-        .ilanit-box h2::after { background: var(--neon-blue); }
-        .ilanit-box p { color: var(--text-dim); font-size: 1.05rem; text-align: left; margin: 0 0 0.9rem 0; }
-        .ilanit-box p:last-child { margin-bottom: 0; }
-        .ilanit-box b { color: var(--text-light); }
 
         /* FOOTER */
         .site-footer { background-color: var(--footer-bg); padding: 3.5rem 0 1.5rem; border-top: 1px solid rgba(0, 210, 255, 0.1); margin-top: 3rem; }
@@ -141,7 +116,7 @@
 
     <div class="content-section">
         <h2>Featured Clients</h2>
-        <p>Over the years, Dortech has earned the trust of a wide range of organizations across the business, public, and institutional sectors. Below are some of the clients we're proud to work with (logos on the way - see note below):</p>
+        <p>Over the years, Dortech has earned the trust of a wide range of organizations across the business, public, and institutional sectors. Below are some of the clients we're proud to work with:</p>
     </div>
 
     <section class="client-section">
@@ -149,75 +124,102 @@
 
             <div class="client-card">
                 <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <h3>Moshe Aviv Tower</h3>
-                <p class="client-placeholder">Logo on the way from Ilanit</p>
-            </div>
-
-            <div class="client-card">
-                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <h3>Rothschild 22</h3>
-                <p class="client-placeholder">Logo on the way from Ilanit</p>
-            </div>
-
-            <div class="client-card">
-                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <h3>The Hills Complex</h3>
-                <p class="client-placeholder">Logo on the way from Ilanit</p>
-            </div>
-
-            <div class="client-card">
-                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <h3>D.M. Banatev</h3>
-                <p class="client-placeholder">Logo on the way from Ilanit</p>
-            </div>
-
-            <div class="client-card">
-                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <h3>Keren Cohen</h3>
-                <p class="client-placeholder">Logo on the way from Ilanit</p>
-            </div>
-
-            <div class="client-card">
-                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <h3>Ministry of Communications</h3>
-                <p class="client-placeholder">Logo on the way from Ilanit</p>
-            </div>
-
-            <div class="client-card">
-                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <h3>Shas Network</h3>
-                <p class="client-placeholder">Logo on the way from Ilanit</p>
-            </div>
-
-            <div class="client-card">
-                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <h3>ALI</h3>
-                <p class="client-placeholder">Logo on the way from Ilanit</p>
-            </div>
-
-            <div class="client-card">
-                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <h3>The Psychometric</h3>
-                <p class="client-placeholder">Logo on the way from Ilanit</p>
-            </div>
-
-            <div class="client-card">
-                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 <h3>Israel Dental Association</h3>
+                <p class="client-placeholder">Logo on the way from Ilanit</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>Marex</h3>
+                <p class="client-placeholder">Logo on the way from Ilanit</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>D.M Benatav</h3>
+                <p class="client-placeholder">Logo on the way from Ilanit</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>The Psychoanalytic Society</h3>
+                <p class="client-placeholder">Logo on the way from Ilanit</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>KCB - Keren Cohen Balachrisky, Law Office</h3>
+                <p class="client-placeholder">Logo on the way from Ilanit</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>Moshe Aviv Tower Management</h3>
+                <p class="client-placeholder">Logo on the way from Ilanit</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>The Hills Complex Management</h3>
+                <p class="client-placeholder">Logo on the way from Ilanit</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>Turkeltaub Pilpel Segal, Law Office</h3>
+                <p class="client-placeholder">Logo on the way from Ilanit</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>Let the Animals Live</h3>
+                <p class="client-placeholder">Logo on the way from Ilanit</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>CFO Forum</h3>
+                <p class="client-placeholder">Logo on the way from Ilanit</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>Company Executives Forum</h3>
+                <p class="client-placeholder">Logo on the way from Ilanit</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>ALI Association</h3>
+                <p class="client-placeholder">Logo on the way from Ilanit</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>Rothschild 22 Tower Management</h3>
+                <p class="client-placeholder">Logo on the way from Ilanit</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>GOM</h3>
+                <p class="client-placeholder">Logo on the way from Ilanit</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>Mobfox</h3>
+                <p class="client-placeholder">Logo on the way from Ilanit</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>Glispa</h3>
                 <p class="client-placeholder">Logo on the way from Ilanit</p>
             </div>
 
         </div>
     </section>
-
-    <div class="ilanit-box">
-        <span class="badge">📋 Task for Ilanit (yes, you, reading this right now)</span>
-        <h2>Ilanit, your turn!</h2>
-        <p>To turn this page from "a boring list of names" into "a truly impressive customer page," we'll need <b>logo files</b> (PNG or SVG, transparent background if possible) for every client listed above. One combined file or separate files - whatever's easiest for you.</p>
-        <p>By the way, we noticed that in your original email you asked us "is there anyone else to add?" - so now we're asking you the exact same question right back: <b>is there anyone else worth adding to the list?</b> Feels like déjà vu, we know.</p>
-        <p>Also, if we got any name slightly wrong (like the spelling of "D.M. Banatev") - feel free to correct us, we just copied what was in the email.</p>
-        <p>And before this page goes live to the public: worth double-checking with each of these clients (especially government/institutional bodies) that it's okay to display their names publicly - they may need to sign off first. No rush though, this is currently only deployed internally and not visible to the public. 🙂</p>
-    </div>
 </main>
 
 <footer class="site-footer">
