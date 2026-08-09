@@ -45,6 +45,7 @@
         .hero-section { padding: 4rem 0 1.5rem; text-align: left; }
         .hero-section h1 { font-size: 3.2rem; color: #fff; margin: 0; }
         .hero-section h1 b { color: var(--neon-blue); font-weight: 800; }
+        .hero-section .hero-intro { font-size: 1.15rem; color: var(--text-dim); max-width: 800px; margin-top: 1rem; text-align: justify; }
 
         /* SERVICE BLOCKS */
         .service-block { padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); scroll-margin-top: 100px; text-align: left; }
@@ -54,6 +55,7 @@
         .service-block h2::after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: var(--dortech-orange); }
         
         .service-block p { font-size: 1.15rem; color: var(--text-dim); margin: 0; text-align: justify; }
+        .service-block p + p { margin-top: 0.8rem; }
 
         /* FOOTER */
         .site-footer { background-color: var(--footer-bg); padding: 3.5rem 0 1.5rem; border-top: 1px solid rgba(0, 210, 255, 0.1); margin-top: 3rem; }
@@ -93,37 +95,57 @@
 
 <main class="container">
     <section class="hero-section">
-        <h1>Products & <b>Solutions</b></h1>
+        <h1>Advanced Technology <b>Solutions</b> for Organizations</h1>
+        <p class="hero-intro">We provide a complete suite of IT, cloud, cybersecurity, development, and infrastructure services, fully tailored to your organization's needs, regulatory requirements, and business goals. We guide our clients from planning and design through implementation, maintenance, and future growth.</p>
     </section>
 
+    <div class="service-block" id="managed-it">
+        <h2>Managed IT Services</h2>
+        <p>We provide end-to-end managed IT services, including user support, endpoint and server management, communication equipment, and enterprise computing systems. The service is based on continuous monitoring, proactive troubleshooting, and ongoing performance optimization, ensuring high availability, business continuity, and an optimal user experience.</p>
+    </div>
+
     <div class="service-block" id="consulting">
-        <h2>Strategic Consulting & Planning</h2>
-        <p>Comprehensive site survey, consulting on choosing the most suitable infrastructure and connectivity for the organization's needs, project planning including detailed specifications for communication, hardware, and software systems.</p>
-    </div>
-
-    <div class="service-block" id="infrastructure">
-        <h2>Communication Infrastructure & Low Voltage</h2>
-        <p>Planning and deployment of communication networks, endpoints, and server room establishment. Our expertise includes the installation of smart PBX (telephony) and low-voltage systems, including access control infrastructure and CCTV.</p>
-    </div>
-
-    <div class="service-block" id="virtualization">
-        <h2>Virtualization & Servers</h2>
-        <p>Setup and configuration of application and mail servers using VMware, Hyper-V, or Open Source technologies. These solutions enable optimal hardware resource utilization, maintenance cost savings, and maximum operational flexibility. Server configurations are tailored for organizations ranging from a few users to networks supporting hundreds of workstations.</p>
-    </div>
-
-    <div class="service-block" id="security">
-        <h2>Information Security</h2>
-        <p>The majority of organizational data breaches are caused by users (usually in good faith). Proper training, establishing work procedures, and using the right technological tools reduce and even prevent damage from users. These are, of course, in addition to the correct definition and management of Firewall, EDR, and protection tools to prevent malicious network intrusion.</p>
+        <h2>IT Consulting, Planning & Strategy</h2>
+        <p>We provide strategic consulting and planning services that combine long-term technological and business vision. The service includes infrastructure and systems mapping, cost review, analysis of third-party vendor agreements, identification of redundant services and licenses, and recommendations for efficiency and savings. Our goal is to build a secure, efficient, and cost-effective technology infrastructure tailored to your organization's needs and future growth.</p>
     </div>
 
     <div class="service-block" id="cloud">
-        <h2>Cloud Computing</h2>
-        <p>Provision of cloud-based mail services (Hosted Exchange), file servers, application servers, and terminal servers in physical or virtual cloud configurations. We offer Office 365 and Google Apps based solutions, customized to the organization's specific requirements.</p>
+        <h2>Cloud, Backup & Disaster Recovery (DR)</h2>
+        <p>We provide advanced cloud solutions that enable operational flexibility, work from anywhere, and efficient management of organizational resources. Our solutions include Microsoft 365, Azure, Google Workspace, private and hybrid cloud services, alongside backup and disaster recovery (DR) solutions that ensure business continuity, high resilience, and rapid recovery of systems and data in the event of a failure, cyberattack, or disaster.</p>
+    </div>
+
+    <div class="service-block" id="security">
+        <h2>Cybersecurity & Information Security</h2>
+        <p>We provide comprehensive cybersecurity and information security solutions, including protection for endpoints, servers, and cloud environments through Firewall systems and advanced EDR/XDR solutions.</p>
+        <p>The service includes penetration testing (PT), risk assessments and privacy law compliance, permission management, procedure writing, and employee training, aimed at strengthening organizational defense and meeting regulatory requirements.</p>
+    </div>
+
+    <div class="service-block" id="virtualization">
+        <h2>Virtualization, Servers & Data Centers</h2>
+        <p>We build and manage advanced server environments based on VMware, Hyper-V, and other leading virtualization solutions. The service includes the setup and management of application servers, databases, file servers, and virtual environments, optimizing hardware resource utilization, improving performance, reducing costs, and ensuring high availability and resilience.</p>
+    </div>
+
+    <div class="service-block" id="development">
+        <h2>Custom Application & Systems Development</h2>
+        <p>We develop custom applications, business systems, and digital solutions that help streamline workflows, automate processes, integrate existing systems, and support your organization's business growth.</p>
     </div>
 
     <div class="service-block" id="hardware">
-        <h2>Hardware & Software Supply</h2>
-        <p>As authorized resellers of leading brands (Dell, Lenovo, Fortinet, Check Point, etc.), we provide servers, workstations, peripheral equipment, and software tailored precisely to your requirements.</p>
+        <h2>Hardware, Software & Licensing Supply</h2>
+        <p>As business partners of the world's leading manufacturers, we provide hardware, software, and licensing solutions precisely tailored to your organization's needs, including servers, storage systems, workstations, communication equipment, information security solutions, backup systems, and software licenses from the market's leading vendors.</p>
+    </div>
+
+    <div class="service-block" id="infrastructure">
+        <h2>Communication Infrastructure, Fiber Optics & Low Voltage</h2>
+        <p>We specialize in planning and establishing advanced communication infrastructure, from deploying communication and fiber-optic infrastructure to setting up secure server rooms tailored to your organization's needs. In addition, we provide low-voltage solutions including access control systems, CCTV security cameras, wired and wireless networks, and end-to-end communication solutions, meeting the strictest standards.</p>
+    </div>
+
+    <div class="service-block" id="why-us" style="border-bottom:none;">
+        <h2>Why Choose Us?</h2>
+        <p>We are your organization's technology partner. Instead of managing multiple different vendors, you get all your IT, cloud, cybersecurity, communication, and development services under one roof.</p>
+        <p>With over 25 years of experience in the business and institutional sector, we think ahead, streamline processes, reduce costs, and guide your organization toward the right technology decisions.</p>
+        <p>We take care of the technology, information security, and business continuity, so you can focus on managing and growing your business.</p>
+        <p style="margin-top:1rem; font-weight:700; color:#fff; font-size:1.3rem;">Our people. Your peace of mind.</p>
     </div>
 </main>
 
