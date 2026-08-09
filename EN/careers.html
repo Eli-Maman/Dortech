@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | Dortech Information Technology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #0b0f1a;
+            --header-bg: #121929;
+            --footer-bg: #070a12;
+            --neon-blue: #00d2ff;
+            --dortech-orange: #ff9d00;
+            --text-light: #f1f5f9;
+            --text-dim: #94a3b8;
+        }
+
+        body {
+            font-family: 'Assistant', sans-serif;
+            margin: 0;
+            background-color: var(--bg-deep);
+            color: var(--text-light);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; box-sizing: border-box; }
+
+        /* HEADER */
+        header { padding: 0.8rem 0; background: linear-gradient(to bottom, var(--header-bg) 0%, var(--bg-deep) 100%); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(0, 210, 255, 0.15); }
+        .header-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo-img { height: 65px; width: auto; }
+        nav { display: flex; align-items: center; }
+        nav a { text-decoration: none; color: var(--text-light); margin-left: 2rem; font-weight: 600; transition: 0.3s; font-size: 1rem; }
+        nav a:hover, nav a.active { color: var(--neon-blue); }
+
+        /* Language Switcher */
+        .lang-switch { margin-left: 2rem; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 1.5rem; }
+        .lang-link { color: var(--neon-blue); text-decoration: none; font-weight: 800; font-size: 0.9rem; border: 1px solid var(--neon-blue); padding: 4px 10px; border-radius: 4px; transition: 0.3s; }
+        .lang-link:hover { background: var(--neon-blue); color: #000; }
+
+        /* HERO */
+        .careers-hero { padding: 4rem 0 1.5rem; text-align: left; }
+        .careers-hero h1 { font-size: 3.2rem; color: #fff; margin: 0; }
+        .careers-hero h1 b { color: var(--neon-blue); font-weight: 800; }
+        .careers-hero p.tagline { color: var(--dortech-orange); font-size: 1.4rem; font-weight: 600; margin: 0.2rem 0 0; }
+
+        .content-section { padding: 1rem 0 1.5rem; text-align: left; }
+        .content-section p { font-size: 1.15rem; color: var(--text-dim); margin: 0; text-align: justify; max-width: 760px; }
+
+        /* TRACK CARDS */
+        .tracks-section { padding: 1rem 0 2.5rem; }
+        .tracks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.6rem;
+        }
+        .track-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: 0.3s;
+        }
+        .track-card:hover { border-color: var(--neon-blue); background: rgba(0, 210, 255, 0.04); transform: translateY(-4px); }
+        .track-icon { width: 46px; height: 46px; margin-bottom: 1rem; }
+        .track-card h3 { color: #fff; font-size: 1.3rem; margin: 0 0 0.7rem 0; }
+        .track-card p { color: var(--text-dim); font-size: 1.02rem; margin: 0; line-height: 1.6; }
+
+        /* CTA */
+        .cta-box {
+            background: rgba(255, 157, 0, 0.05);
+            border: 1px solid rgba(255, 157, 0, 0.25);
+            padding: 2.2rem;
+            border-radius: 10px;
+            margin: 1rem 0 3rem;
+            text-align: center;
+        }
+        .cta-box h2 { color: #fff; font-size: 1.5rem; margin: 0 0 0.6rem 0; }
+        .cta-box p { color: var(--text-dim); font-size: 1.05rem; margin: 0 0 1.3rem 0; }
+        .cta-button {
+            display: inline-block;
+            background: var(--dortech-orange);
+            color: #0b0f1a;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 0.8rem 2rem;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+        .cta-button:hover { background: var(--neon-blue); }
+
+        /* FOOTER */
+        .site-footer { background-color: var(--footer-bg); padding: 3.5rem 0 1.5rem; border-top: 1px solid rgba(0, 210, 255, 0.1); margin-top: 3rem; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1.5fr; gap: 3rem; }
+        .footer-col h4 { color: #fff; margin: 0 0 1.2rem 0; position: relative; padding-bottom: 0.4rem; }
+        .footer-col h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 35px; height: 2px; background: var(--dortech-orange); }
+        .footer-col p { color: var(--text-dim); font-size: 0.95rem; margin: 0 0 0.8rem 0; }
+        .footer-links a { color: var(--text-dim); text-decoration: none; display: block; margin-bottom: 0.6rem; font-size: 0.95rem; transition: 0.2s; }
+        .footer-links a:hover { color: var(--neon-blue); }
+
+        @media (max-width: 768px) {
+            .careers-hero h1 { font-size: 2.5rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-flex">
+        <a href="index.html"><img src="../Assets/Dortech%20logo.png" alt="Dortech" class="logo-img"></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Solutions</a>
+            <a href="projects.html">Projects</a>
+            <a href="team.html">Team</a>
+            <a href="customers.html">Customers</a>
+            <a href="careers.html" class="active">Careers</a>
+            <a href="contact.html">Contact</a>
+            <div class="lang-switch">
+                <a href="../HE/careers.html" class="lang-link">עברית</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <section class="careers-hero">
+        <h1>Join <b>Dortech</b></h1>
+        <p class="tagline">We're always glad to meet good people</p>
+    </section>
+
+    <div class="content-section">
+        <p>Dortech is a boutique information technology company, and we believe our people are our most important asset. We're always looking for quality professionals - along two tracks:</p>
+    </div>
+
+    <section class="tracks-section">
+        <div class="tracks-grid">
+
+            <div class="track-card">
+                <svg class="track-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M3 7h18v12H3V7Z" stroke-linejoin="round"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 13h18" stroke-linecap="round"/></svg>
+                <h3>Experienced Professionals</h3>
+                <p>Do you have proven experience in network infrastructure, information security, network management, or high-level technical support? We'd love to hear from you and explore opportunities together.</p>
+            </div>
+
+            <div class="track-card">
+                <svg class="track-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke-linecap="round"/><circle cx="12" cy="12" r="4"/></svg>
+                <h3>Power Users with a Passion for Tech</h3>
+                <p>Are you an advanced user who's comfortable troubleshooting and supporting others - and eager to learn and grow in the worlds of computer networking, cybersecurity, and AI? This could be your professional starting point.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="cta-box">
+        <h2>Don't see an open role that fits?</h2>
+        <p>Send us your resume anyway - we're always reading.</p>
+        <a href="mailto:info@dortech.co.il" class="cta-button">Send Resume</a>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="../Assets/Dortech%20logo.png" alt="Dortech" style="height: 48px; margin-bottom: 15px;">
+                <p>Dortech provides comprehensive technological solutions since 2001, focusing on human service and customized solutions.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Navigation</h4>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Solutions</a>
+                    <a href="customers.html">Customers</a>
+                    <a href="careers.html">Careers</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Details</h4>
+                <p><b>📞 Phone:</b> 03-5751070</p>
+                <p><b>📧 Email:</b> info@dortech.co.il</p>
+                <p><b>📍 Address:</b> 7 Jabotinsky St., Moshe Aviv Tower, Ramat Gan</p>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:2.5rem; color:var(--text-dim); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem; font-size:0.85rem;">
+            &copy; 2026 Dortech Information Technology Ltd. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
