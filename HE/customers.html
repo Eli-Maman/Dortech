@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>לקוחות | דורטק טכנולוגיות מידע</title>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #0b0f1a;
+            --header-bg: #121929;
+            --footer-bg: #070a12;
+            --neon-blue: #00d2ff;
+            --dortech-orange: #ff9d00;
+            --text-light: #f1f5f9;
+            --text-dim: #94a3b8;
+        }
+
+        body {
+            font-family: 'Assistant', sans-serif;
+            margin: 0;
+            background-color: var(--bg-deep);
+            color: var(--text-light);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; box-sizing: border-box; }
+
+        /* HEADER */
+        header { padding: 0.8rem 0; background: linear-gradient(to bottom, var(--header-bg) 0%, var(--bg-deep) 100%); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(0, 210, 255, 0.15); }
+        .header-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo-img { height: 65px; width: auto; }
+        nav { display: flex; align-items: center; }
+        nav a { text-decoration: none; color: var(--text-light); margin-right: 2rem; font-weight: 600; transition: 0.3s; font-size: 1rem; }
+        nav a:hover, nav a.active { color: var(--neon-blue); }
+
+        /* Language Switcher */
+        .lang-switch { margin-right: 2rem; border-right: 1px solid rgba(255,255,255,0.2); padding-right: 1.5rem; }
+        .lang-link { color: var(--neon-blue); text-decoration: none; font-weight: 800; font-size: 0.9rem; border: 1px solid var(--neon-blue); padding: 4px 10px; border-radius: 4px; transition: 0.3s; }
+        .lang-link:hover { background: var(--neon-blue); color: #000; }
+
+        /* HERO */
+        .customers-hero { padding: 4rem 0 1.5rem; text-align: right; }
+        .customers-hero h1 { font-size: 3.2rem; color: #fff; margin: 0; }
+        .customers-hero h1 b { color: var(--neon-blue); font-weight: 800; }
+        .customers-hero p.tagline { color: var(--dortech-orange); font-size: 1.4rem; font-weight: 600; margin: 0.2rem 0 0; }
+
+        /* CONTENT & SPACING */
+        .content-section { padding: 1.2rem 0; text-align: right; }
+        .content-section h2 { color: var(--neon-blue); font-size: 2rem; margin: 0 0 0.8rem 0; position: relative; display: inline-block; padding-bottom: 5px; }
+        .content-section h2::after { content: ''; position: absolute; bottom: 0; right: 0; width: 50px; height: 3px; background: var(--dortech-orange); }
+        .content-section p { font-size: 1.15rem; color: var(--text-dim); margin: 0 0 0.8rem 0; text-align: justify; }
+
+        /* CLIENT GRID */
+        .client-section { padding: 1rem 0 2rem; }
+        .client-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 1.4rem;
+        }
+        .client-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 1.6rem 1.2rem;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .client-card:hover { border-color: var(--neon-blue); background: rgba(0, 210, 255, 0.04); transform: translateY(-4px); }
+        .client-icon { width: 56px; height: 56px; margin: 0 auto 0.9rem; opacity: 0.85; }
+        .client-card h3 { color: #fff; font-size: 1.05rem; margin: 0 0 0.4rem 0; }
+        .client-card .client-placeholder { color: var(--text-dim); font-size: 0.82rem; font-style: italic; margin: 0; }
+
+        /* NOTE TO ILANIT BOX */
+        .ilanit-box {
+            background: rgba(255, 157, 0, 0.05);
+            border: 1px dashed rgba(255, 157, 0, 0.4);
+            padding: 2rem 2.2rem;
+            border-radius: 10px;
+            margin: 2.5rem 0 3rem;
+            text-align: right;
+        }
+        .ilanit-box .badge {
+            display: inline-block;
+            background: rgba(255, 157, 0, 0.15);
+            color: var(--dortech-orange);
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 5px 16px;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+        }
+        .ilanit-box h2 { color: var(--dortech-orange); }
+        .ilanit-box h2::after { background: var(--neon-blue); }
+        .ilanit-box p { color: var(--text-dim); font-size: 1.05rem; text-align: right; margin: 0 0 0.9rem 0; }
+        .ilanit-box p:last-child { margin-bottom: 0; }
+        .ilanit-box b { color: var(--text-light); }
+
+        /* FOOTER */
+        .site-footer { background-color: var(--footer-bg); padding: 3.5rem 0 1.5rem; border-top: 1px solid rgba(0, 210, 255, 0.1); margin-top: 3rem; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1.5fr; gap: 3rem; }
+        .footer-col h4 { color: #fff; margin: 0 0 1.2rem 0; position: relative; padding-bottom: 0.4rem; }
+        .footer-col h4::after { content: ''; position: absolute; bottom: 0; right: 0; width: 35px; height: 2px; background: var(--dortech-orange); }
+        .footer-col p { color: var(--text-dim); font-size: 0.95rem; margin: 0 0 0.8rem 0; }
+        .footer-links a { color: var(--text-dim); text-decoration: none; display: block; margin-bottom: 0.6rem; font-size: 0.95rem; transition: 0.2s; }
+        .footer-links a:hover { color: var(--neon-blue); }
+
+        @media (max-width: 768px) {
+            .customers-hero h1 { font-size: 2.5rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-flex">
+        <a href="index.html"><img src="../Assets/Dortech%20logo.png" alt="דורטק" class="logo-img"></a>
+        <nav>
+            <a href="index.html">בית</a>
+            <a href="about.html">אודות</a>
+            <a href="services.html">פתרונות</a>
+            <a href="projects.html">פרויקטים</a>
+            <a href="team.html">צוות</a>
+            <a href="customers.html" class="active">לקוחות</a>
+            <a href="careers.html">דרושים</a>
+            <a href="contact.html">צור קשר</a>
+            <div class="lang-switch">
+                <a href="../EN/customers.html" class="lang-link">EN</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <section class="customers-hero">
+        <h1>ה<b>לקוחות</b> שלנו</h1>
+        <p class="tagline">ארגונים מובילים שבוחרים בדורטק</p>
+    </section>
+
+    <div class="content-section">
+        <h2>לקוחות נבחרים</h2>
+        <p>לאורך השנים זכתה דורטק באמון של ארגונים מגוונים במגזר העסקי, הציבורי והמוסדי. להלן חלק מהלקוחות איתם אנו גאים לעבוד (לוגואים בדרך - ראו הערה למטה):</p>
+    </div>
+
+    <section class="client-section">
+        <div class="client-grid">
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>מגדל משה אביב</h3>
+                <p class="client-placeholder">לוגו בדרך מאילנית</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>רוטשילד 22</h3>
+                <p class="client-placeholder">לוגו בדרך מאילנית</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>מתחם הילס</h3>
+                <p class="client-placeholder">לוגו בדרך מאילנית</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>ד.מ בנטב</h3>
+                <p class="client-placeholder">לוגו בדרך מאילנית</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>קרן כהן</h3>
+                <p class="client-placeholder">לוגו בדרך מאילנית</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>משרד התקשורת</h3>
+                <p class="client-placeholder">לוגו בדרך מאילנית</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>רשת ש"ס</h3>
+                <p class="client-placeholder">לוגו בדרך מאילנית</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>אל"י</h3>
+                <p class="client-placeholder">לוגו בדרך מאילנית</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>הפסיכומטרי</h3>
+                <p class="client-placeholder">לוגו בדרך מאילנית</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>ההסתדרות לרפואת שיניים</h3>
+                <p class="client-placeholder">לוגו בדרך מאילנית</p>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="ilanit-box">
+        <span class="badge">📋 משימה לאילנית (כן, את, שקוראת את זה עכשיו)</span>
+        <h2>אילנית, התור שלך!</h2>
+        <p>כדי שהעמוד הזה יעבור מ"רשימת שמות משעממת" ל"עמוד לקוחות מרשים באמת", נצטרך ממך <b>קובצי לוגו</b> (PNG או SVG, רקע שקוף אם יש) לכל אחד מהלקוחות ברשימה למעלה. אפשר בקובץ אחד מרוכז או כל אחד בנפרד - מה שנוח לך.</p>
+        <p>אגב, שמנו לב שבאימייל המקורי את שאלת אותנו "יש לכם עוד מישהו לשים?" - אז עכשיו אנחנו שואלים אותך בחזרה, באותה נשימה בדיוק: <b>יש עוד לקוחות שכדאי להוסיף לרשימה?</b> תחושת דז'ה-וו, אנחנו יודעים.</p>
+        <p>גם אם כתבנו איזה שם לא מדויק (למשל האיות של "ד.מ בנטב") - תתקני אותנו בלי היסוס, פשוט העתקנו מה שהיה באימייל.</p>
+        <p>ולפני שהעמוד יוצא לאור עולם: כדאי לוודא שאפשר להציג בפומבי את כל השמות האלה (בייחוד גופים ממשלתיים/מוסדיים) - יכול להיות שצריך אישור שיווקי מהם קודם. בינתיים אל תדאגי, זה עולה רק בפריסה פנימית ולא גלוי לציבור. 🙂</p>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="../Assets/Dortech%20logo.png" alt="דורטק" style="height: 48px; margin-bottom: 15px;">
+                <p>דורטק מספקת פתרונות טכנולוגיים מקיפים משנת 2001, עם דגש על שירות אנושי ופתרונות מותאמים אישית.</p>
+            </div>
+            <div class="footer-col">
+                <h4>ניווט מהיר</h4>
+                <div class="footer-links">
+                    <a href="index.html">בית</a>
+                    <a href="about.html">אודותינו</a>
+                    <a href="services.html">פתרונות</a>
+                    <a href="customers.html">לקוחות</a>
+                    <a href="careers.html">דרושים</a>
+                    <a href="contact.html">צור קשר</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>פרטי התקשרות</h4>
+                <p><b>📞 טלפון:</b> 03-5751070</p>
+                <p><b>📧 מייל:</b> info@dortech.co.il</p>
+                <p><b>📍 כתובת:</b> ז'בוטינסקי 7, מגדל משה אביב, רמת גן</p>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:2.5rem; color:var(--text-dim); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem; font-size:0.85rem;">
+            &copy; 2026 דורטק טכנולוגיות מידע בע"מ. כל הזכויות שמורות.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
