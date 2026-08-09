@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers | Dortech Information Technology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #0b0f1a;
+            --header-bg: #121929;
+            --footer-bg: #070a12;
+            --neon-blue: #00d2ff;
+            --dortech-orange: #ff9d00;
+            --text-light: #f1f5f9;
+            --text-dim: #94a3b8;
+        }
+
+        body {
+            font-family: 'Assistant', sans-serif;
+            margin: 0;
+            background-color: var(--bg-deep);
+            color: var(--text-light);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; box-sizing: border-box; }
+
+        /* HEADER */
+        header { padding: 0.8rem 0; background: linear-gradient(to bottom, var(--header-bg) 0%, var(--bg-deep) 100%); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(0, 210, 255, 0.15); }
+        .header-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo-img { height: 65px; width: auto; }
+        nav { display: flex; align-items: center; }
+        nav a { text-decoration: none; color: var(--text-light); margin-left: 2rem; font-weight: 600; transition: 0.3s; font-size: 1rem; }
+        nav a:hover, nav a.active { color: var(--neon-blue); }
+
+        /* Language Switcher */
+        .lang-switch { margin-left: 2rem; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 1.5rem; }
+        .lang-link { color: var(--neon-blue); text-decoration: none; font-weight: 800; font-size: 0.9rem; border: 1px solid var(--neon-blue); padding: 4px 10px; border-radius: 4px; transition: 0.3s; }
+        .lang-link:hover { background: var(--neon-blue); color: #000; }
+
+        /* HERO */
+        .customers-hero { padding: 4rem 0 1.5rem; text-align: left; }
+        .customers-hero h1 { font-size: 3.2rem; color: #fff; margin: 0; }
+        .customers-hero h1 b { color: var(--neon-blue); font-weight: 800; }
+        .customers-hero p.tagline { color: var(--dortech-orange); font-size: 1.4rem; font-weight: 600; margin: 0.2rem 0 0; }
+
+        /* CONTENT & SPACING */
+        .content-section { padding: 1.2rem 0; text-align: left; }
+        .content-section h2 { color: var(--neon-blue); font-size: 2rem; margin: 0 0 0.8rem 0; position: relative; display: inline-block; padding-bottom: 5px; }
+        .content-section h2::after { content: ''; position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: var(--dortech-orange); }
+        .content-section p { font-size: 1.15rem; color: var(--text-dim); margin: 0 0 0.8rem 0; text-align: justify; }
+
+        /* CLIENT GRID */
+        .client-section { padding: 1rem 0 2rem; }
+        .client-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 1.4rem;
+        }
+        .client-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 1.6rem 1.2rem;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .client-card:hover { border-color: var(--neon-blue); background: rgba(0, 210, 255, 0.04); transform: translateY(-4px); }
+        .client-icon { width: 56px; height: 56px; margin: 0 auto 0.9rem; opacity: 0.85; }
+        .client-card h3 { color: #fff; font-size: 1.05rem; margin: 0 0 0.4rem 0; }
+        .client-card .client-placeholder { color: var(--text-dim); font-size: 0.82rem; font-style: italic; margin: 0; }
+
+        /* NOTE TO ILANIT BOX */
+        .ilanit-box {
+            background: rgba(255, 157, 0, 0.05);
+            border: 1px dashed rgba(255, 157, 0, 0.4);
+            padding: 2rem 2.2rem;
+            border-radius: 10px;
+            margin: 2.5rem 0 3rem;
+            text-align: left;
+        }
+        .ilanit-box .badge {
+            display: inline-block;
+            background: rgba(255, 157, 0, 0.15);
+            color: var(--dortech-orange);
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 5px 16px;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+        }
+        .ilanit-box h2 { color: var(--dortech-orange); }
+        .ilanit-box h2::after { background: var(--neon-blue); }
+        .ilanit-box p { color: var(--text-dim); font-size: 1.05rem; text-align: left; margin: 0 0 0.9rem 0; }
+        .ilanit-box p:last-child { margin-bottom: 0; }
+        .ilanit-box b { color: var(--text-light); }
+
+        /* FOOTER */
+        .site-footer { background-color: var(--footer-bg); padding: 3.5rem 0 1.5rem; border-top: 1px solid rgba(0, 210, 255, 0.1); margin-top: 3rem; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1.5fr; gap: 3rem; }
+        .footer-col h4 { color: #fff; margin: 0 0 1.2rem 0; position: relative; padding-bottom: 0.4rem; }
+        .footer-col h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 35px; height: 2px; background: var(--dortech-orange); }
+        .footer-col p { color: var(--text-dim); font-size: 0.95rem; margin: 0 0 0.8rem 0; }
+        .footer-links a { color: var(--text-dim); text-decoration: none; display: block; margin-bottom: 0.6rem; font-size: 0.95rem; transition: 0.2s; }
+        .footer-links a:hover { color: var(--neon-blue); }
+
+        @media (max-width: 768px) {
+            .customers-hero h1 { font-size: 2.5rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-flex">
+        <a href="index.html"><img src="../Assets/Dortech%20logo.png" alt="Dortech" class="logo-img"></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Solutions</a>
+            <a href="projects.html">Projects</a>
+            <a href="team.html">Team</a>
+            <a href="customers.html" class="active">Customers</a>
+            <a href="careers.html">Careers</a>
+            <a href="contact.html">Contact</a>
+            <div class="lang-switch">
+                <a href="../HE/customers.html" class="lang-link">עברית</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <section class="customers-hero">
+        <h1>Our <b>Customers</b></h1>
+        <p class="tagline">Leading organizations that choose Dortech</p>
+    </section>
+
+    <div class="content-section">
+        <h2>Featured Clients</h2>
+        <p>Over the years, Dortech has earned the trust of a wide range of organizations across the business, public, and institutional sectors. Below are some of the clients we're proud to work with (logos on the way - see note below):</p>
+    </div>
+
+    <section class="client-section">
+        <div class="client-grid">
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>Moshe Aviv Tower</h3>
+                <p class="client-placeholder">Logo on the way from Ilanit</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>Rothschild 22</h3>
+                <p class="client-placeholder">Logo on the way from Ilanit</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>The Hills Complex</h3>
+                <p class="client-placeholder">Logo on the way from Ilanit</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>D.M. Banatev</h3>
+                <p class="client-placeholder">Logo on the way from Ilanit</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>Keren Cohen</h3>
+                <p class="client-placeholder">Logo on the way from Ilanit</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>Ministry of Communications</h3>
+                <p class="client-placeholder">Logo on the way from Ilanit</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>Shas Network</h3>
+                <p class="client-placeholder">Logo on the way from Ilanit</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>ALI</h3>
+                <p class="client-placeholder">Logo on the way from Ilanit</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>The Psychometric</h3>
+                <p class="client-placeholder">Logo on the way from Ilanit</p>
+            </div>
+
+            <div class="client-card">
+                <svg class="client-icon" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="1.5"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 11h.01M15 11h.01M9 8h.01M15 8h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>Israel Dental Association</h3>
+                <p class="client-placeholder">Logo on the way from Ilanit</p>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="ilanit-box">
+        <span class="badge">📋 Task for Ilanit (yes, you, reading this right now)</span>
+        <h2>Ilanit, your turn!</h2>
+        <p>To turn this page from "a boring list of names" into "a truly impressive customer page," we'll need <b>logo files</b> (PNG or SVG, transparent background if possible) for every client listed above. One combined file or separate files - whatever's easiest for you.</p>
+        <p>By the way, we noticed that in your original email you asked us "is there anyone else to add?" - so now we're asking you the exact same question right back: <b>is there anyone else worth adding to the list?</b> Feels like déjà vu, we know.</p>
+        <p>Also, if we got any name slightly wrong (like the spelling of "D.M. Banatev") - feel free to correct us, we just copied what was in the email.</p>
+        <p>And before this page goes live to the public: worth double-checking with each of these clients (especially government/institutional bodies) that it's okay to display their names publicly - they may need to sign off first. No rush though, this is currently only deployed internally and not visible to the public. 🙂</p>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="../Assets/Dortech%20logo.png" alt="Dortech" style="height: 48px; margin-bottom: 15px;">
+                <p>Dortech provides comprehensive technological solutions since 2001, focusing on human service and customized solutions.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Navigation</h4>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Solutions</a>
+                    <a href="customers.html">Customers</a>
+                    <a href="careers.html">Careers</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Details</h4>
+                <p><b>📞 Phone:</b> 03-5751070</p>
+                <p><b>📧 Email:</b> info@dortech.co.il</p>
+                <p><b>📍 Address:</b> 7 Jabotinsky St., Moshe Aviv Tower, Ramat Gan</p>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:2.5rem; color:var(--text-dim); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem; font-size:0.85rem;">
+            &copy; 2026 Dortech Information Technology Ltd. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
