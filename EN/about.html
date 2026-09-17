@@ -99,13 +99,58 @@
             .about-hero h1 { font-size: 2.5rem; }
             .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
         }
-    </style>
+    
+/* ===== Mobile Navigation (added for responsive fix) ===== */
+.nav-toggle {
+    display: none;
+    background: rgba(0, 210, 255, 0.08);
+    border: 1px solid rgba(0, 210, 255, 0.4);
+    border-radius: 6px;
+    color: var(--neon-blue);
+    font-size: 1.5rem;
+    line-height: 1;
+    width: 44px;
+    height: 40px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+@media (max-width: 900px) {
+    html, body { max-width: 100%; overflow-x: hidden; }
+    .header-flex { position: relative; flex-wrap: nowrap; }
+    .nav-toggle { display: flex; }
+    header nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        flex-direction: column;
+        align-items: stretch;
+        background: var(--header-bg, #121929);
+        border-top: 1px solid rgba(0, 210, 255, 0.15);
+        box-shadow: 0 20px 30px rgba(0,0,0,0.45);
+        padding: 0.5rem 25px 1.5rem;
+        z-index: 1000;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+    header nav.nav-open { display: flex; }
+    header nav a { margin: 0 !important; padding: 0.9rem 0 !important; border-bottom: 1px solid rgba(255,255,255,0.06); width: 100%; box-sizing: border-box; }
+    header nav .lang-switch { margin: 0.8rem 0 0 !important; border-right: none !important; border-left: none !important; padding-right: 0 !important; padding-left: 0 !important; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 1rem !important; width: 100%; box-sizing: border-box; }
+}
+@media (max-width: 480px) {
+    .acc-menu { max-width: calc(100vw - 40px); }
+}
+</style>
 </head>
 <body>
 
 <header>
     <div class="container header-flex">
         <a href="index.html"><img src="../Assets/Dortech%20logo.png" alt="Dortech" class="logo-img"></a>
+        <button class="nav-toggle" aria-label="Menu" onclick="this.nextElementSibling.classList.toggle('nav-open')">&#9776;</button>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html" class="active">About</a>
