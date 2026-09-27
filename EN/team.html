@@ -50,7 +50,7 @@ nav a:hover, nav a.active { color: var(--neon-blue); }
 .team-section { padding: 2rem 0 3rem; }
 .team-grid {
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+grid-template-columns: 1fr;
 gap: 1.8rem;
 }
 .team-card {
@@ -133,14 +133,30 @@ box-shadow: 0 0 0 3px rgba(0, 210, 255, 0.15);
 @media (max-width: 480px) {
     .acc-menu { max-width: calc(100vw - 40px); }
 }
+/* Team grid: explicit column counts (each card spans 2 tracks) so a lone card in the last row is centered */
+@media (min-width: 540px) {
+.team-grid { grid-template-columns: repeat(4, 1fr); }
+.team-card { grid-column: span 2; }
+.team-card:last-child:nth-child(2n+1) { grid-column: 2 / span 2; }
+}
+@media (min-width: 800px) {
+.team-grid { grid-template-columns: repeat(6, 1fr); }
+.team-card:last-child:nth-child(2n+1) { grid-column: span 2; }
+.team-card:last-child:nth-child(3n+1) { grid-column: 3 / span 2; }
+}
+@media (min-width: 1060px) {
+.team-grid { grid-template-columns: repeat(8, 1fr); }
+.team-card:last-child:nth-child(3n+1) { grid-column: span 2; }
+.team-card:last-child:nth-child(4n+1) { grid-column: 4 / span 2; }
+}
 </style>
     <meta name="description" content="Meet the Dortech team: the professionals who manage, maintain and secure our clients' IT systems.">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Dortech">
     <meta property="og:title" content="Our Team | Dortech Information Technology">
     <meta property="og:description" content="Meet the Dortech team: the professionals who manage, maintain and secure our clients' IT systems.">
-    <meta property="og:url" content="https://dortechit.netlify.app/EN/team.html">
-    <meta property="og:image" content="https://dortechit.netlify.app/Assets/og-image.jpg">
+    <meta property="og:url" content="https://dortech.co.il/EN/team.html">
+    <meta property="og:image" content="https://dortech.co.il/Assets/og-image.jpg">
     <meta property="og:locale" content="en_US">
     <link rel="icon" type="image/png" sizes="32x32" href="../Assets/favicon-32.png">
     <link rel="apple-touch-icon" href="../Assets/apple-touch-icon.png">
@@ -219,36 +235,9 @@ box-shadow: 0 0 0 3px rgba(0, 210, 255, 0.15);
 <path d="M50 82c4 4 16 4 20 0" stroke="#2b2320" stroke-width="3" fill="none" stroke-linecap="round"/>
 </svg>
 </div>
-<h3>Dmitry Feinstein</h3>
+<h3>Demitry Feinstein</h3>
 <p class="team-title">CTO</p>
 <p class="team-placeholder">Leading Dortech's technology function for over 12 years, with deep understanding of existing technologies alongside adapting new ones, and the ability to diagnose and deliver solutions for the most complex issues.</p>
-</div>
-
-<div class="team-card">
-<div class="team-avatar">
-<img src="../Assets/Boris_Belinson.jpeg" alt="Boris Belinson">
-</div>
-<h3>Boris Belinson</h3>
-<p class="team-title">Network Manager & Field Technician</p>
-<p class="team-placeholder">Helpdesk member known across the team as "the smiling professional" who always shows up with a solution and a smile. CTO's right hand.</p>
-</div>
-
-<div class="team-card">
-<div class="team-avatar">
-<img src="../Assets/Mikhael_Rakhman.jpeg" alt="Michael Rachman">
-</div>
-<h3>Michael Rachman</h3>
-<p class="team-title">PC Technician</p>
-<p class="team-placeholder">Helpdesk member and is known for an exceptionally high level of service and the ability to resolve issues quickly and efficiently.</p>
-</div>
-
-<div class="team-card">
-<div class="team-avatar">
-<img src="../Assets/Aviv_Haim.jpeg" alt="Aviv Chaim">
-</div>
-<h3>Aviv Chaim</h3>
-<p class="team-title">Network Manager & Freelance Field Technician</p>
-<p class="team-placeholder">A highly skilled field technician with broad expertise in infrastructure and control systems such as access control, intercoms, cameras, and IP PBX systems. Has been working with Dortech for over 15 years.</p>
 </div>
 
 <div class="team-card">
@@ -256,7 +245,7 @@ box-shadow: 0 0 0 3px rgba(0, 210, 255, 0.15);
 <img src="../Assets/Yaron_Adika.jpeg" alt="Yaron Adika">
 </div>
 <h3>Yaron Adika</h3>
-<p class="team-title">Information Security Expert (Outsourced)</p>
+<p class="team-title">Cyber Security Expert</p>
 <p class="team-placeholder">An information security expert and cyber defense product developer, supporting Dortech's clients on the most advanced aspects of security.</p>
 </div>
 
@@ -276,6 +265,33 @@ box-shadow: 0 0 0 3px rgba(0, 210, 255, 0.15);
 <h3>Noam Logasi</h3>
 <p class="team-title">CIO & IT Expert (Outsourced)</p>
 <p class="team-placeholder">An IT expert with over 20 years of extensive experience, has served as a CIO and consultant at numerous enterprise companies, and brings a broad, strategic perspective to managing our clients' information systems.</p>
+</div>
+
+<div class="team-card">
+<div class="team-avatar">
+<img src="../Assets/Aviv_Haim.jpeg" alt="Aviv Chaim">
+</div>
+<h3>Aviv Chaim</h3>
+<p class="team-title">Network Manager & Freelance Field Technician</p>
+<p class="team-placeholder">A highly skilled field technician with broad expertise in infrastructure and control systems such as access control, intercoms, cameras, and IP PBX systems. Has been working with Dortech for over 15 years.</p>
+</div>
+
+<div class="team-card">
+<div class="team-avatar">
+<img src="../Assets/Boris_Belinson.jpeg" alt="Boris Belinson">
+</div>
+<h3>Boris Belinson</h3>
+<p class="team-title">Network Manager & Field Technician</p>
+<p class="team-placeholder">Helpdesk member known across the team as "the smiling professional" who always shows up with a solution and a smile.</p>
+</div>
+
+<div class="team-card">
+<div class="team-avatar">
+<img src="../Assets/Mikhael_Rakhman.jpeg" alt="Michael Rachman">
+</div>
+<h3>Michael Rachman</h3>
+<p class="team-title">PC Technician</p>
+<p class="team-placeholder">Helpdesk member and is known for an exceptionally high level of service and the ability to resolve issues quickly and efficiently.</p>
 </div>
 
 </div>

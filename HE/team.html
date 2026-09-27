@@ -50,7 +50,7 @@ nav a:hover, nav a.active { color: var(--neon-blue); }
 .team-section { padding: 2rem 0 3rem; }
 .team-grid {
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+grid-template-columns: 1fr;
 gap: 1.8rem;
 }
 .team-card {
@@ -133,14 +133,30 @@ box-shadow: 0 0 0 3px rgba(0, 210, 255, 0.15);
 @media (max-width: 480px) {
     .acc-menu { max-width: calc(100vw - 40px); }
 }
+/* Team grid: explicit column counts (each card spans 2 tracks) so a lone card in the last row is centered */
+@media (min-width: 540px) {
+.team-grid { grid-template-columns: repeat(4, 1fr); }
+.team-card { grid-column: span 2; }
+.team-card:last-child:nth-child(2n+1) { grid-column: 2 / span 2; }
+}
+@media (min-width: 800px) {
+.team-grid { grid-template-columns: repeat(6, 1fr); }
+.team-card:last-child:nth-child(2n+1) { grid-column: span 2; }
+.team-card:last-child:nth-child(3n+1) { grid-column: 3 / span 2; }
+}
+@media (min-width: 1060px) {
+.team-grid { grid-template-columns: repeat(8, 1fr); }
+.team-card:last-child:nth-child(3n+1) { grid-column: span 2; }
+.team-card:last-child:nth-child(4n+1) { grid-column: 4 / span 2; }
+}
 </style>
     <meta name="description" content="הכירו את צוות דורטק: אנשי המקצוע שמנהלים, מתחזקים ומאבטחים את מערכות המחשוב של לקוחותינו.">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="דורטק">
     <meta property="og:title" content="הצוות שלנו | דורטק פתרונות מחשוב">
     <meta property="og:description" content="הכירו את צוות דורטק: אנשי המקצוע שמנהלים, מתחזקים ומאבטחים את מערכות המחשוב של לקוחותינו.">
-    <meta property="og:url" content="https://dortechit.netlify.app/HE/team.html">
-    <meta property="og:image" content="https://dortechit.netlify.app/Assets/og-image.jpg">
+    <meta property="og:url" content="https://dortech.co.il/HE/team.html">
+    <meta property="og:image" content="https://dortech.co.il/Assets/og-image.jpg">
     <meta property="og:locale" content="he_IL">
     <link rel="icon" type="image/png" sizes="32x32" href="../Assets/favicon-32.png">
     <link rel="apple-touch-icon" href="../Assets/apple-touch-icon.png">
@@ -226,33 +242,6 @@ box-shadow: 0 0 0 3px rgba(0, 210, 255, 0.15);
 
 <div class="team-card">
 <div class="team-avatar">
-<img src="../Assets/Boris_Belinson.jpeg" alt="בוריס בלינסון">
-</div>
-<h3>בוריס בלינסון</h3>
-<p class="team-title">מנהל רשתות וטכנאי שטח</p>
-<p class="team-placeholder">חבר ה-Helpdesk המוכר בצוות כ'המקצוען החייכן' שתמיד מגיע עם פתרון ועם חיוך. יד ימינו של המנהל הטכנולוגי.</p>
-</div>
-
-<div class="team-card">
-<div class="team-avatar">
-<img src="../Assets/Mikhael_Rakhman.jpeg" alt="מיכאל רכמן">
-</div>
-<h3>מיכאל רכמן</h3>
-<p class="team-title">טכנאי PC</p>
-<p class="team-placeholder">חבר ה-Helpdesk, מתאפיין בתודעת שירות גבוהה במיוחד וביכולת לפתור תקלות במהירות וביעילות.</p>
-</div>
-
-<div class="team-card">
-<div class="team-avatar">
-<img src="../Assets/Aviv_Haim.jpeg" alt="אביב חיים">
-</div>
-<h3>אביב חיים</h3>
-<p class="team-title">מנהל רשתות וטכנאי שטח פרילנסר</p>
-<p class="team-placeholder">טכנאי שטח ברמה גבוהה עם ידע נרחב בתשתיות תקשורת ובמערכות בקרה כגון בקרות כניסה, אינטרקום, מצלמות ומרכזיות IP. עובד עם דורטק למעלה מ-15 שנים.</p>
-</div>
-
-<div class="team-card">
-<div class="team-avatar">
 <img src="../Assets/Yaron_Adika.jpeg" alt="ירון עדיקא">
 </div>
 <h3>ירון עדיקא</h3>
@@ -276,6 +265,33 @@ box-shadow: 0 0 0 3px rgba(0, 210, 255, 0.15);
 <h3>נועם לוגסי</h3>
 <p class="team-title">מנמ״ר ומומחה IT (מיקור חוץ)</p>
 <p class="team-placeholder">מומחה IT עם ניסיון עשיר של למעלה מ-20 שנה בתחום, שימש כמנמ״ר וכיועץ בלא מעט חברות אנטרפרייז, ומביא ראייה רחבה ואסטרטגית לניהול מערכות המידע של לקוחותינו.</p>
+</div>
+
+<div class="team-card">
+<div class="team-avatar">
+<img src="../Assets/Aviv_Haim.jpeg" alt="אביב חיים">
+</div>
+<h3>אביב חיים</h3>
+<p class="team-title">מנהל רשתות וטכנאי שטח פרילנסר</p>
+<p class="team-placeholder">טכנאי שטח ברמה גבוהה עם ידע נרחב בתשתיות תקשורת ובמערכות בקרה כגון בקרות כניסה, אינטרקום, מצלמות ומרכזיות IP. עובד עם דורטק למעלה מ-15 שנים.</p>
+</div>
+
+<div class="team-card">
+<div class="team-avatar">
+<img src="../Assets/Boris_Belinson.jpeg" alt="בוריס בלינסון">
+</div>
+<h3>בוריס בלינסון</h3>
+<p class="team-title">מנהל רשתות וטכנאי שטח</p>
+<p class="team-placeholder">חבר ה-Helpdesk המוכר בצוות כ'המקצוען החייכן' שתמיד מגיע עם פתרון ועם חיוך.</p>
+</div>
+
+<div class="team-card">
+<div class="team-avatar">
+<img src="../Assets/Mikhael_Rakhman.jpeg" alt="מיכאל רכמן">
+</div>
+<h3>מיכאל רכמן</h3>
+<p class="team-title">טכנאי PC</p>
+<p class="team-placeholder">חבר ה-Helpdesk, מתאפיין בתודעת שירות גבוהה במיוחד וביכולת לפתור תקלות במהירות וביעילות.</p>
 </div>
 
 </div>
