@@ -195,10 +195,12 @@
 
     <div class="contact-wrapper">
         <div class="contact-form">
-            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/HE/contact.html">
-                <input type="hidden" name="form-name" value="contact">
+            <form method="POST" action="https://api.web3forms.com/submit" data-dt-form>
+                <input type="hidden" name="access_key" value="ab641356-d3dc-4713-b1ca-be8e79966fee">
+                <input type="hidden" name="subject" value="פנייה חדשה מאתר דורטק (עברית)">
+                <input type="hidden" name="from_name" value="אתר דורטק">
                 <input type="hidden" name="language" value="עברית">
-                <p class="dt-honeypot"><label>אין למלא שדה זה <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+                <p class="dt-honeypot"><label>אין לסמן תיבה זו <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label></p>
                 <div class="form-group"><label for="cf-name">שם מלא</label><input id="cf-name" name="name" type="text" placeholder="השם שלך" autocomplete="name" required></div>
                 <div class="form-group"><label for="cf-email">כתובת אימייל</label><input id="cf-email" name="email" type="email" placeholder="email@company.com" autocomplete="email" dir="ltr" required></div>
                 <div class="form-group"><label for="cf-phone">מספר טלפון</label><input id="cf-phone" name="phone" type="tel" placeholder="050-0000000" autocomplete="tel" dir="ltr"></div>

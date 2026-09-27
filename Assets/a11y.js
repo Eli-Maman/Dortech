@@ -161,8 +161,8 @@
         wrap.appendChild(btn);
         document.body.appendChild(wrap);
 
-        // Contact form: submit to Netlify Forms without leaving the page
-        var form = document.querySelector('form[data-netlify]');
+        // Contact form: submit to Web3Forms without leaving the page
+        var form = document.querySelector('form[data-dt-form]');
         if (form && window.fetch) {
             var status = form.querySelector('.dt-form-status');
             form.addEventListener('submit', function (e) {
@@ -170,12 +170,15 @@
                 var submit = form.querySelector('[type="submit"]');
                 if (submit) submit.disabled = true;
                 if (status) { status.className = 'dt-form-status'; status.textContent = T.sending; }
-                fetch('/', {
+                fetch(form.action, {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: new URLSearchParams(new FormData(form)).toString()
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(Object.fromEntries(new FormData(form)))
                 }).then(function (r) {
-                    if (!r.ok) throw new Error(r.status);
+                    return r.json().catch(function () { return {}; }).then(function (data) {
+                        if (!r.ok || !data.success) throw new Error(data.message || r.status);
+                    });
+                }).then(function () {
                     form.reset();
                     if (status) { status.className = 'dt-form-status ok'; status.textContent = T.sent; }
                 }).catch(function () {
