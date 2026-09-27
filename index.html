@@ -144,19 +144,21 @@
     .btn-orange { padding: 1rem 2rem; font-size: 1.05rem; width: 100%; box-sizing: border-box; text-align: center; }
 }
 </style>
+    <meta name="description" content="דורטק ניהול מערכות מידע – השותף הטכנולוגי של העסק שלכם משנת 2001: שירותי מחשוב מנוהלים, תמיכה, אבטחת מידע, גיבוי ושחזור, ענן ותקשורת לעסקים.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="דורטק">
+    <meta property="og:title" content="DORTECH | פתרונות מחשוב, אבטחת מידע ותקשורת">
+    <meta property="og:description" content="דורטק ניהול מערכות מידע – השותף הטכנולוגי של העסק שלכם משנת 2001: שירותי מחשוב מנוהלים, תמיכה, אבטחת מידע, גיבוי ושחזור, ענן ותקשורת לעסקים.">
+    <meta property="og:url" content="https://dortechit.netlify.app/">
+    <meta property="og:image" content="https://dortechit.netlify.app/Assets/og-image.jpg">
+    <meta property="og:locale" content="he_IL">
+    <link rel="icon" type="image/png" sizes="32x32" href="Assets/favicon-32.png">
+    <link rel="apple-touch-icon" href="Assets/apple-touch-icon.png">
+    <link rel="stylesheet" href="Assets/a11y.css">
+    <script src="Assets/a11y.js" defer></script>
 </head>
 <body>
 
-<div id="accessibility-nav">
-    <button class="acc-btn" onclick="toggleAccMenu()">♿</button>
-    <div class="acc-menu" id="accMenu">
-        <h4 style="color:#000; margin-top:0; text-align:center;">נגישות DORTECH</h4>
-        <button class="acc-option" onclick="accAction('large-text', this)">טקסט גדול</button>
-        <button class="acc-option" onclick="accAction('high-contrast', this)">ניגודיות גבוהה</button>
-        <button class="acc-option" onclick="accAction('highlight-links', this)">הדגשת קישורים</button>
-        <button class="acc-option acc-reset" onclick="accAction('reset')">איפוס הגדרות</button>
-    </div>
-</div>
 
 <header>
     <div class="container header-flex">
@@ -190,9 +192,10 @@
     </section>
 
     <section id="services" class="container">
+        <h2 class="dt-visually-hidden">למה דורטק</h2>
         <div class="grid">
             <div class="card">
-                <h3>אמינות ומקצועיות</h3>
+<h3>אמינות ומקצועיות</h3>
                 <p>ניסיון רב שנים בניהול מערכות מורכבות, עם שקיפות מלאה לאורך כל הדרך.</p>
             </div>
             <div class="card">
@@ -230,7 +233,7 @@
                 <p>דורטק מספקת מעטפת טכנולוגית שלמה לעסקים משנת 2001, תוך דגש על שירות אנושי ופתרונות המותאמים אישית.</p>
             </div>
             <div class="footer-col">
-                <h4>ניווט מהיר</h4>
+                <h4 aria-level="2">ניווט מהיר</h4>
                 <ul class="footer-links">
                     <li><a href="index.html">דף הבית</a></li>
                     <li><a href="HE/about.html">אודות החברה</a></li>
@@ -241,51 +244,19 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>פרטי קשר</h4>
+                <h4 aria-level="2">פרטי קשר</h4>
                 <div class="contact-info-footer">
-                    <p><b>📞 טלפון:</b> 03-5751070</p>
-                    <p><b>📧 אימייל:</b> info@dortech.co.il</p>
+                    <p><b>📞 טלפון:</b> <a class="dt-contact-link" href="tel:+97235751070">03-5751070</a></p>
+                    <p><b>📧 אימייל:</b> <a class="dt-contact-link" href="mailto:info@dortech.co.il">info@dortech.co.il</a></p>
                     <p><b>📍 כתובת:</b><span class="contact-address">ז׳בוטינסקי 7, מגדל משה אביב רמת גן 5252007</span></p>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2026 דורטק ניהול מערכות מידע בע"מ. כל הזכויות שמורות.
-        </div>
+            &copy; 2026 דורטק ניהול מערכות מידע בע"מ. כל הזכויות שמורות. | <a class="dt-footer-a11y" href="HE/accessibility.html">הצהרת נגישות</a></div>
     </div>
 </footer>
 
-<script>
-    function toggleAccMenu() {
-        document.getElementById('accMenu').classList.toggle('active');
-    }
-
-    function accAction(action, btnElement) {
-        const html = document.documentElement;
-        const body = document.body;
-
-        if (action === 'reset') {
-            html.classList.remove('acc-large-text');
-            body.classList.remove('acc-high-contrast', 'acc-highlight-links');
-            document.querySelectorAll('.acc-option').forEach(el => el.classList.remove('active-opt'));
-            return;
-        }
-
-        if (action === 'large-text') {
-            const isActive = html.classList.toggle('acc-large-text');
-            isActive ? btnElement.classList.add('active-opt') : btnElement.classList.remove('active-opt');
-        } else {
-            const isActive = body.classList.toggle('acc-' + action);
-            isActive ? btnElement.classList.add('active-opt') : btnElement.classList.remove('active-opt');
-        }
-    }
-
-    window.onclick = function(e) {
-        if (!e.target.matches('.acc-btn') && !e.target.closest('.acc-menu')) {
-            document.getElementById('accMenu').classList.remove('active');
-        }
-    }
-</script>
 
 </body>
 </html>

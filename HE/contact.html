@@ -99,7 +99,7 @@
         .acc-option { display: block; width: 100%; background: #f0f0f0; border: 1px solid #ccc; padding: 10px; margin-bottom: 8px; cursor: pointer; font-weight: bold; }
 
         @media (max-width: 992px) {
-            .contact-wrapper { flex-direction: column; }
+            .contact-wrapper { flex-direction: column; align-items: stretch; gap: 2.5rem; }
             .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
         }
         @media (max-width: 600px) {
@@ -151,18 +151,21 @@
     .acc-menu { max-width: calc(100vw - 40px); }
 }
 </style>
+    <meta name="description" content="צרו קשר עם דורטק: טלפון 03-5751070, מייל info@dortech.co.il, מגדל משה אביב, ז'בוטינסקי 7, רמת גן.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="דורטק">
+    <meta property="og:title" content="צור קשר | דורטק פתרונות מחשוב">
+    <meta property="og:description" content="צרו קשר עם דורטק: טלפון 03-5751070, מייל info@dortech.co.il, מגדל משה אביב, ז'בוטינסקי 7, רמת גן.">
+    <meta property="og:url" content="https://dortechit.netlify.app/HE/contact.html">
+    <meta property="og:image" content="https://dortechit.netlify.app/Assets/og-image.jpg">
+    <meta property="og:locale" content="he_IL">
+    <link rel="icon" type="image/png" sizes="32x32" href="../Assets/favicon-32.png">
+    <link rel="apple-touch-icon" href="../Assets/apple-touch-icon.png">
+    <link rel="stylesheet" href="../Assets/a11y.css">
+    <script src="../Assets/a11y.js" defer></script>
 </head>
 <body>
 
-<div id="accessibility-nav">
-    <button class="acc-btn" onclick="this.nextElementSibling.classList.toggle('active')">♿</button>
-    <div class="acc-menu">
-        <h5 style="margin:0 0 10px 0; text-align:center;">הגדרות נגישות</h5>
-        <button class="acc-option" onclick="document.documentElement.classList.toggle('acc-large-text')">טקסט גדול</button>
-        <button class="acc-option" onclick="document.body.classList.toggle('acc-high-contrast')">ניגודיות גבוהה</button>
-        <button class="acc-option" style="background:#ff4444; color:#fff;" onclick="location.reload()">איפוס</button>
-    </div>
-</div>
 
 <header>
     <div class="container header-flex">
@@ -192,18 +195,23 @@
 
     <div class="contact-wrapper">
         <div class="contact-form">
-            <form>
-                <div class="form-group"><label>שם מלא</label><input type="text" placeholder="השם שלך" required></div>
-                <div class="form-group"><label>כתובת אימייל</label><input type="email" placeholder="email@company.com" required></div>
-                <div class="form-group"><label>מספר טלפון</label><input type="tel" placeholder="050-0000000"></div>
-                <div class="form-group"><label>הודעה</label><textarea rows="5" placeholder="איך נוכל לעזור?"></textarea></div>
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/HE/contact.html">
+                <input type="hidden" name="form-name" value="contact">
+                <input type="hidden" name="language" value="עברית">
+                <p class="dt-honeypot"><label>אין למלא שדה זה <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+                <div class="form-group"><label for="cf-name">שם מלא</label><input id="cf-name" name="name" type="text" placeholder="השם שלך" autocomplete="name" required></div>
+                <div class="form-group"><label for="cf-email">כתובת אימייל</label><input id="cf-email" name="email" type="email" placeholder="email@company.com" autocomplete="email" dir="ltr" required></div>
+                <div class="form-group"><label for="cf-phone">מספר טלפון</label><input id="cf-phone" name="phone" type="tel" placeholder="050-0000000" autocomplete="tel" dir="ltr"></div>
+                <div class="form-group"><label for="cf-message">הודעה</label><textarea id="cf-message" name="message" rows="5" placeholder="איך נוכל לעזור?" required></textarea></div>
                 <button type="submit" class="btn-submit">שליחת הודעה</button>
+                <div class="dt-form-status" role="status" aria-live="polite"></div>
             </form>
         </div>
 
+        <h2 class="dt-visually-hidden">פרטי התקשרות</h2>
         <div class="contact-info">
             <div class="info-item"><h3>המשרדים שלנו</h3><p>מגדל משה אביב, ז'בוטינסקי 7, רמת גן</p></div>
-            <div class="info-item"><h3>קשר ישיר</h3><p><b>טלפון:</b> 03-5751070</p><p><b>דוא"ל:</b> info@dortech.co.il</p></div>
+            <div class="info-item"><h3>קשר ישיר</h3><p><b>טלפון:</b> <a class="dt-contact-link" href="tel:+97235751070">03-5751070</a></p><p><b>דוא"ל:</b> <a class="dt-contact-link" href="mailto:info@dortech.co.il">info@dortech.co.il</a></p></div>
             <div class="info-item"><h3>שעות פעילות</h3><p>ראשון - חמישי: 09:00 - 18:00</p></div>
         </div>
     </div>
@@ -217,7 +225,7 @@
                 <p>דורטק מספקת פתרונות טכנולוגיים מקיפים משנת 2001, תוך דגש על שירות אנושי ופתרונות המותאמים אישית.</p>
             </div>
             <div class="footer-col">
-                <h4>ניווט מהיר</h4>
+                <h4 aria-level="2">ניווט מהיר</h4>
                 <div class="footer-links">
                     <a href="../index.html">דף הבית</a>
                     <a href="about.html">אודותינו</a>
@@ -228,15 +236,14 @@
                 </div>
             </div>
             <div class="footer-col">
-                <h4>פרטי התקשרות</h4>
-                <p><b>📞 טלפון:</b> 03-5751070</p>
-                <p><b>📧 דוא"ל:</b> info@dortech.co.il</p>
+                <h4 aria-level="2">פרטי התקשרות</h4>
+                <p><b>📞 טלפון:</b> <a class="dt-contact-link" href="tel:+97235751070">03-5751070</a></p>
+                <p><b>📧 דוא"ל:</b> <a class="dt-contact-link" href="mailto:info@dortech.co.il">info@dortech.co.il</a></p>
                 <p><b>📍 כתובת:</b> ז'בוטינסקי 7, מגדל משה אביב, רמת גן</p>
             </div>
         </div>
         <div style="text-align:center; margin-top:2.5rem; color:var(--text-dim); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem; font-size:0.85rem;">
-            &copy; 2026 דורטק ניהול מערכות מידע בע"מ. כל הזכויות שמורות.
-        </div>
+            &copy; 2026 דורטק ניהול מערכות מידע בע"מ. כל הזכויות שמורות. | <a class="dt-footer-a11y" href="accessibility.html">הצהרת נגישות</a></div>
     </div>
 </footer>
 

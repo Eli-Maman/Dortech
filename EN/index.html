@@ -149,18 +149,21 @@
     .btn-orange { padding: 1rem 2rem; font-size: 1.05rem; width: 100%; box-sizing: border-box; text-align: center; }
 }
 </style>
+    <meta name="description" content="Dortech Information Technology – your business technology partner since 2001: managed IT services, support, cybersecurity, backup and recovery, cloud and communications.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dortech">
+    <meta property="og:title" content="DORTECH | IT Solutions, Cybersecurity & Communication">
+    <meta property="og:description" content="Dortech Information Technology – your business technology partner since 2001: managed IT services, support, cybersecurity, backup and recovery, cloud and communications.">
+    <meta property="og:url" content="https://dortechit.netlify.app/EN/index.html">
+    <meta property="og:image" content="https://dortechit.netlify.app/Assets/og-image.jpg">
+    <meta property="og:locale" content="en_US">
+    <link rel="icon" type="image/png" sizes="32x32" href="../Assets/favicon-32.png">
+    <link rel="apple-touch-icon" href="../Assets/apple-touch-icon.png">
+    <link rel="stylesheet" href="../Assets/a11y.css">
+    <script src="../Assets/a11y.js" defer></script>
 </head>
 <body>
 
-<div id="accessibility-nav">
-    <button class="acc-btn" onclick="toggleAccMenu()">♿</button>
-    <div class="acc-menu" id="accMenu">
-        <h4 style="color:#000; margin-top:0; text-align:center;">Accessibility</h4>
-        <button class="acc-option" onclick="accAction('large-text', this)">Large Text</button>
-        <button class="acc-option" onclick="accAction('high-contrast', this)">High Contrast</button>
-        <button class="acc-option" style="background:#ef4444; color:#fff;" onclick="accAction('reset')">Reset Settings</button>
-    </div>
-</div>
 
 <header>
     <div class="container header-flex">
@@ -193,9 +196,10 @@
     </section>
 
     <section id="services" class="container">
+        <h2 class="dt-visually-hidden">Why Dortech</h2>
         <div class="grid">
             <div class="card">
-                <h3>Reliability & Professionalism</h3>
+<h3>Reliability & Professionalism</h3>
                 <p>Years of experience in managing complex systems with full transparency throughout the entire process.</p>
             </div>
             <div class="card">
@@ -231,7 +235,7 @@
                 <p>Dortech has been providing comprehensive technological solutions since 2001, focusing on human service and personalized solutions.</p>
             </div>
             <div class="footer-col">
-                <h4>Quick Links</h4>
+                <h4 aria-level="2">Quick Links</h4>
                 <ul class="footer-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
@@ -242,34 +246,19 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Contact Info</h4>
+                <h4 aria-level="2">Contact Info</h4>
                 <div class="contact-info-footer">
-                    <p><b>📞 Phone:</b> 03-5751070</p>
-                    <p><b>📧 Email:</b> info@dortech.co.il</p>
+                    <p><b>📞 Phone:</b> <a class="dt-contact-link" href="tel:+97235751070">03-5751070</a></p>
+                    <p><b>📧 Email:</b> <a class="dt-contact-link" href="mailto:info@dortech.co.il">info@dortech.co.il</a></p>
                     <p><b>📍 Address:</b> 7 Jabotinsky St., Moshe Aviv Tower, Ramat Gan</p>
                 </div>
             </div>
         </div>
         <div class="footer-bottom" style="text-align:center; color:var(--text-dim); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem; font-size:0.85rem;">
-            &copy; 2026 Dortech IT Management Ltd. All Rights Reserved.
-        </div>
+            &copy; 2026 Dortech Information Technology Ltd. All Rights Reserved. | <a class="dt-footer-a11y" href="accessibility.html">Accessibility Statement</a></div>
     </div>
 </footer>
 
-<script>
-    function toggleAccMenu() { document.getElementById('accMenu').classList.toggle('active'); }
-    function accAction(action, btn) {
-        const html = document.documentElement;
-        const body = document.body;
-        if (action === 'reset') {
-            html.classList.remove('acc-large-text');
-            body.classList.remove('acc-high-contrast', 'acc-highlight-links');
-            return;
-        }
-        if (action === 'large-text') html.classList.toggle('acc-large-text');
-        else body.classList.toggle('acc-' + action);
-    }
-</script>
 
 </body>
 </html>
