@@ -83,7 +83,7 @@
             toggle.setAttribute('aria-label', T.menu);
             var sync = function () { toggle.setAttribute('aria-expanded', nav.classList.contains('nav-open') ? 'true' : 'false'); };
             sync();
-            toggle.addEventListener('click', function () { setTimeout(sync, 0); });
+            toggle.addEventListener('click', function () { nav.classList.toggle('nav-open'); sync(); });
             document.addEventListener('keydown', function (e) {
                 if (e.key === 'Escape' && nav.classList.contains('nav-open')) { nav.classList.remove('nav-open'); sync(); toggle.focus(); }
             });
